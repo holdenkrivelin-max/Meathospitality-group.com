@@ -253,6 +253,41 @@ nav{
   padding:4px 0;
 }
 .nav-link:hover{color:var(--gold)}
+.nav-drop{position:relative;display:inline-block;}
+.nav-drop>summary{
+  font-size:12.3px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(44,58,40,0.55);cursor:pointer;
+  font-family:'Jost',sans-serif;font-weight:400;transition:color .2s;
+  padding:4px 0;list-style:none;display:flex;align-items:center;gap:4px;
+}
+.nav-drop>summary::-webkit-details-marker{display:none;}
+.nav-drop>summary:after{content:'▾';font-size:9px;color:var(--gold);}
+.nav-drop:hover>summary,.nav-drop[open]>summary{color:var(--gold);}
+.nav-drop-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  background:var(--cream);border:1px solid rgba(44,58,40,0.15);
+  box-shadow:0 12px 32px rgba(0,0,0,0.12);padding:14px 0;margin-top:14px;
+  min-width:180px;z-index:200;
+}
+.nav-drop-menu button{
+  display:block;width:100%;text-align:left;padding:10px 22px;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(44,58,40,0.65);background:none;border:none;cursor:pointer;
+  font-family:'Jost',sans-serif;transition:color .15s,background .15s;
+}
+.nav-drop-menu button:hover{color:var(--gold);background:rgba(196,151,58,0.06);}
+.nav-new-here{
+  font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(196,151,58,0.5);
+  padding:5px 14px;background:none;cursor:pointer;
+  font-family:'Jost',sans-serif;font-weight:500;transition:background .2s;
+}
+.nav-new-here:hover{background:rgba(196,151,58,0.1);}
+.mobile-nav-section-label{
+  font-size:10.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin:26px 0 6px;padding-top:14px;border-top:1px solid rgba(44,58,40,0.1);
+}
+.mobile-nav-panel .mobile-nav-section-label:first-of-type{border-top:none;margin-top:0;padding-top:0;}
 .nav-cta{
   padding:11px 24px;background:var(--char);color:var(--char);
   font-family:'Jost',sans-serif;font-weight:600;font-size:12.3px;
@@ -1571,23 +1606,43 @@ footer a:hover{opacity:1}
     <img src="data:image/webp;base64,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" alt="MEAT Hospitality Group — home" style="height:40px;width:40px;object-fit:contain;filter:none;"/>
     <span style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20.2px;letter-spacing:.22em;color:var(--char);">MEAT<span style="font-size:10.1px;letter-spacing:.3em;color:var(--gold);display:block;margin-top:2px;">Hospitality Group</span></span>
   </a>
-  <div class="nav-links">
-    <button class="nav-link" onclick="document.getElementById('dinner002').scrollIntoView({behavior:'smooth'})">Dinner 002</button>
-    <button class="nav-link" onclick="document.getElementById('everyone').scrollIntoView({behavior:'smooth'})">Join Us</button>
-    <button class="nav-link" onclick="document.getElementById('discover').scrollIntoView({behavior:'smooth'})">Discover</button>
+  <div class="nav-links" style="align-items:center;">
+    <button class="nav-new-here" onclick="document.getElementById('founder').scrollIntoView({behavior:'smooth'})">New Here?</button>
+
+    <details class="nav-drop">
+      <summary>Attend</summary>
+      <div class="nav-drop-menu">
+        <button onclick="document.getElementById('dinner002').scrollIntoView({behavior:'smooth'})">Dinner 002</button>
+        <button onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})">Ways to Come</button>
+        <button onclick="document.getElementById('venues').scrollIntoView({behavior:'smooth'})">Venues</button>
+      </div>
+    </details>
+
+    <details class="nav-drop">
+      <summary>Explore</summary>
+      <div class="nav-drop-menu">
+        <button onclick="document.getElementById('discover').scrollIntoView({behavior:'smooth'})">Discover</button>
+        <button onclick="document.getElementById('podcast').scrollIntoView({behavior:'smooth'})">Podcast</button>
+        <button onclick="document.getElementById('littlewins').scrollIntoView({behavior:'smooth'})">Little Wins</button>
+        <button onclick="document.getElementById('blueprint').scrollIntoView({behavior:'smooth'})">Blueprint</button>
+      </div>
+    </details>
+
     <button class="nav-link" onclick="document.getElementById('merch').scrollIntoView({behavior:'smooth'})">Merch</button>
-    <button class="nav-link" onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">Roadmap</button>
-    <button class="nav-link" onclick="document.getElementById('littlewins').scrollIntoView({behavior:'smooth'})">Little Wins</button>
-    <button class="nav-link" onclick="document.getElementById('podcast').scrollIntoView({behavior:'smooth'})">Podcast</button>
-    <button class="nav-link" onclick="document.getElementById('blueprint').scrollIntoView({behavior:'smooth'})">Blueprint</button>
-    <button class="nav-link" onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})">Ways to Come</button>
-    <button class="nav-link" onclick="document.getElementById('venues').scrollIntoView({behavior:'smooth'})">Venues</button>
-    <button class="nav-link" onclick="document.getElementById('philosophy').scrollIntoView({behavior:'smooth'})">Philosophy</button>
-    <button class="nav-link" onclick="document.getElementById('founder').scrollIntoView({behavior:'smooth'})">Founder</button>
-    <button class="nav-link" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our Story</button>
-    <button class="nav-link" onclick="document.getElementById('investors').scrollIntoView({behavior:'smooth'})">Investors &amp; Team</button>
+
+    <details class="nav-drop">
+      <summary>About</summary>
+      <div class="nav-drop-menu">
+        <button onclick="document.getElementById('philosophy').scrollIntoView({behavior:'smooth'})">Philosophy</button>
+        <button onclick="document.getElementById('founder').scrollIntoView({behavior:'smooth'})">Founder</button>
+        <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our Story</button>
+        <button onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">Roadmap</button>
+      </div>
+    </details>
+
+    <button class="nav-link" style="color:#C4973A !important;font-weight:600;" onclick="document.getElementById('investors').scrollIntoView({behavior:'smooth'})">Partner With Us</button>
   </div>
-  <button class="nav-cta" style="background:#2C3A28;color:#F7F3EC;" onclick="scrollToWaitlist()">Join the Waitlist →</button>
+  <button class="nav-cta" style="background:#C4973A !important;color:#2C3A28 !important;border:none !important;" onclick="scrollToWaitlist()">Become a Meatie →</button>
   <button class="nav-burger" aria-label="Open menu" onclick="document.getElementById('mobileNavPanel').classList.add('open');document.getElementById('mobileNavClose').classList.add('open');">
     <span></span><span></span><span></span>
   </button>
@@ -1595,20 +1650,26 @@ footer a:hover{opacity:1}
 
 <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu" onclick="document.getElementById('mobileNavPanel').classList.remove('open');this.classList.remove('open');">×</button>
 <div class="mobile-nav-panel" id="mobileNavPanel">
+  <button class="nav-new-here" style="margin-bottom:8px;" onclick="closeMobileNavAndGo('founder')">New Here? Start Here →</button>
+
+  <p class="mobile-nav-section-label">Attend</p>
   <button class="nav-link" onclick="closeMobileNavAndGo('dinner002')">Dinner 002</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('everyone')">Join Us</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('discover')">Discover</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('merch')">Merch</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('roadmap')">Roadmap</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('littlewins')">Little Wins</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('podcast')">Podcast</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('blueprint')">Blueprint</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('tiers')">Ways to Come</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('venues')">Venues</button>
+
+  <p class="mobile-nav-section-label">Explore</p>
+  <button class="nav-link" onclick="closeMobileNavAndGo('discover')">Discover</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('podcast')">Podcast</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('littlewins')">Little Wins</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('blueprint')">Blueprint</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('merch')">Merch</button>
+
+  <p class="mobile-nav-section-label">About</p>
   <button class="nav-link" onclick="closeMobileNavAndGo('philosophy')">Philosophy</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('founder')">Founder</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('story')">Our Story</button>
-  <button class="nav-link" style="color:#C4973A !important;font-weight:600;" onclick="closeMobileNavAndGo('investors')">Investors &amp; Team</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('roadmap')">Roadmap</button>
+  <button class="nav-link" style="color:#C4973A !important;font-weight:600;" onclick="closeMobileNavAndGo('investors')">Partner With Us</button>
 </div>
 <script>
 function closeMobileNavAndGo(id){
@@ -1624,11 +1685,13 @@ function closeMobileNavAndGo(id){
   <div style="margin-bottom:32px;">
     <img src="data:image/webp;base64,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" alt="" style="height:90px;width:90px;object-fit:contain;filter:none;opacity:0.92;"/>
   </div>
-  <p class="hero-eyebrow">New York City · Est. 2026</p>
+  <p class="hero-eyebrow" style="letter-spacing:.35em;">MEATING MATTERS</p>
   <h1 class="hero-wordmark">MEAT</h1>
   <div class="hero-sub">Hospitality Group</div>
+  <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C4973A;margin:6px 0 0;">New York City · Est. 2026</p>
   <h2 class="hero-headline">Come as you are.<br><em>Leave different.</em></h2>
-  <p class="hero-body">Intimate dinners built around a chef's concept — what we call a Meatsperience — showcasing his or her passion through food and storytelling. No attitude. No dress code. Just great food and the right people.</p>
+  <p class="hero-body" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;">Meatings and meatsperiences that make your life a little more meatingful.</p>
+  <p class="hero-body">We go where meeting matters — to every place, showcasing every face when life gets loud.</p>
   <div class="hero-ctas">
     <button class="btn-gold" onclick="scrollToWaitlist()">Join the Waitlist</button>
     <button class="btn-ghost" onclick="document.getElementById('everyone').scrollIntoView({behavior:'smooth'})">See Who's Welcome</button>
@@ -2153,6 +2216,12 @@ function closeMobileNavAndGo(id){
       <span style="height:1px;width:60px;background:rgba(196,151,58,0.5);display:block;"></span>
     </div>
     <p style="font-size:clamp(16px,2.2vw,20px);color:#F7F3EC !important;font-weight:500;line-height:1.7;max-width:600px;margin:0 auto 48px;padding:20px 24px;border:1px solid rgba(196,151,58,0.4);">In short: tell MEAT who you are, get matched with meaties, take a first step (solo or together), earn Meat Points, and redeem them across dinners, cafes, gyms, and more.</p>
+
+    <div style="max-width:680px;margin:0 auto 48px;text-align:left;background:rgba(196,151,58,0.06);border-left:3px solid #C4973A;padding:32px 36px;">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.6vw,25px);color:#F7F3EC !important;line-height:1.6;margin-bottom:16px;">Never have that FOMO feeling again.</p>
+      <p style="font-size:16px;color:rgba(247,243,236,0.75) !important;line-height:1.85;">Even if you can't make it to one of our events, you can still feel like you were there — through our merchandise, earning points for doing everyday things, and the chance to spend those points across MEAT Rewards. Your life just got a whole lot easier. That's the MEAT way of doing things.</p>
+    </div>
+
     <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">Discover, book, and create experiences that bring people together.</p>
     <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">From chef tastings and restaurant pop-ups to networking events, fitness meetups, creative workshops, and local hangouts — MEAT helps you find experiences that match your interests, your budget, and your goals.</p>
     <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">Every Meatsperience you attend helps MEAT learn what you love, so your recommendations become more personal over time.</p>
