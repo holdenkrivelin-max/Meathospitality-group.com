@@ -231,6 +231,23 @@ h1, h2, h3, h4, h5, h6, p, li, span, div, a, label {
 }
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--char);font-family:'Jost',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden}
+body.dark-mode{filter:invert(0.93) hue-rotate(180deg);background:#111;}
+body.dark-mode img, body.dark-mode iframe, body.dark-mode video{filter:invert(0.93) hue-rotate(180deg);}
+#darkModeToggle, .dm-toggle-mirror{
+  background:none;border:1px solid rgba(44,58,40,0.3);border-radius:20px;
+  width:40px;height:22px;position:relative;cursor:pointer;padding:0;flex-shrink:0;
+}
+#darkModeToggle span, .dm-toggle-mirror span{
+  position:absolute;top:1px;left:1px;width:18px;height:18px;border-radius:50%;
+  background:#2C3A28;transition:transform .2s ease;
+}
+body.dark-mode #darkModeToggle span, body.dark-mode .dm-toggle-mirror span{transform:translateX(18px);}
+.quiz-option{
+  font-family:'Jost',sans-serif;font-size:14.6px;color:#2C3A28;background:#F7F3EC;
+  border:1px solid rgba(44,58,40,0.2);padding:14px 18px;text-align:left;cursor:pointer;
+  transition:border-color .2s ease,background .2s ease;
+}
+.quiz-option:hover{border-color:#C4973A;background:#fff;}
 
 /* ── NAV ── */
 nav{
@@ -240,6 +257,12 @@ nav{
   background:rgba(247,243,236,0.98);
   border-bottom:1px solid var(--border-light);
 }
+#scrollProgress{
+  position:fixed;top:0;left:0;height:3px;width:0%;
+  background:#C4973A;z-index:201;transition:width .1s linear;
+}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 .nav-logo{
   font-family:'Cormorant Garamond',serif;font-weight:400;font-size:22.4px;
   letter-spacing:.22em;color:var(--char);text-decoration:none;line-height:1;
@@ -1600,6 +1623,9 @@ footer a:hover{opacity:1}
 })();
 </script>
 
+<!-- SCROLL PROGRESS -->
+<div id="scrollProgress"></div>
+
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="https://meathospitalitygroup.com" target="_blank" style="display:flex;align-items:center;gap:10px;">
@@ -1625,6 +1651,8 @@ footer a:hover{opacity:1}
         <button onclick="document.getElementById('podcast').scrollIntoView({behavior:'smooth'})">Podcast</button>
         <button onclick="document.getElementById('littlewins').scrollIntoView({behavior:'smooth'})">Little Wins</button>
         <button onclick="document.getElementById('blueprint').scrollIntoView({behavior:'smooth'})">Blueprint</button>
+        <button onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">The App</button>
+        <button onclick="document.getElementById('ecosystem').scrollIntoView({behavior:'smooth'})">Ecosystem</button>
       </div>
     </details>
 
@@ -1641,6 +1669,7 @@ footer a:hover{opacity:1}
     </details>
 
     <button class="nav-link" style="color:#C4973A !important;font-weight:600;" onclick="document.getElementById('investors').scrollIntoView({behavior:'smooth'})">Partner With Us</button>
+    <button id="darkModeToggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()"><span></span></button>
   </div>
   <button class="nav-cta" style="background:#C4973A !important;color:#2C3A28 !important;border:none !important;" onclick="scrollToWaitlist()">Become a Meatie →</button>
   <button class="nav-burger" aria-label="Open menu" onclick="document.getElementById('mobileNavPanel').classList.add('open');document.getElementById('mobileNavClose').classList.add('open');">
@@ -1662,6 +1691,8 @@ footer a:hover{opacity:1}
   <button class="nav-link" onclick="closeMobileNavAndGo('podcast')">Podcast</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('littlewins')">Little Wins</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('blueprint')">Blueprint</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('platform')">The App</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('ecosystem')">Ecosystem</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('merch')">Merch</button>
 
   <p class="mobile-nav-section-label">About</p>
@@ -1670,6 +1701,10 @@ footer a:hover{opacity:1}
   <button class="nav-link" onclick="closeMobileNavAndGo('story')">Our Story</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('roadmap')">Roadmap</button>
   <button class="nav-link" style="color:#C4973A !important;font-weight:600;" onclick="closeMobileNavAndGo('investors')">Partner With Us</button>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;margin-top:8px;border-top:1px solid rgba(44,58,40,0.12);">
+    <span class="mobile-nav-section-label" style="margin:0;">Dark Mode</span>
+    <button id="darkModeToggleMobile" aria-label="Toggle dark mode" onclick="toggleDarkMode()" class="dm-toggle-mirror"><span></span></button>
+  </div>
 </div>
 <script>
 function closeMobileNavAndGo(id){
@@ -1690,8 +1725,8 @@ function closeMobileNavAndGo(id){
   <div class="hero-sub">Hospitality Group</div>
   <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C4973A;margin:6px 0 0;">New York City · Est. 2026</p>
   <h2 class="hero-headline">Come as you are.<br><em>Leave different.</em></h2>
-  <p class="hero-body" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;">Meatings and meatsperiences that make your life a little more meatingful.</p>
-  <p class="hero-body">We go where meeting matters — to every place, showcasing every face when life gets loud.</p>
+  <p class="hero-body" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;">We create intimate dinners — what we call Meatsperiences — genuinely connected moments built around a chef's passion, food, and storytelling.</p>
+  <p class="hero-body">We go where meeting matters. We build the room for you to show up as you are, connect with strangers who become community, and leave changed.</p>
   <div class="hero-ctas">
     <button class="btn-gold" onclick="scrollToWaitlist()">Join the Waitlist</button>
     <button class="btn-ghost" onclick="document.getElementById('everyone').scrollIntoView({behavior:'smooth'})">See Who's Welcome</button>
@@ -1701,6 +1736,16 @@ function closeMobileNavAndGo(id){
   </div>
 </div>
 
+
+<!-- WHAT'S NEXT TEASER -->
+<div style="background:#EDE7D8;padding:64px 40px;text-align:center;border-top:1px solid rgba(44,58,40,0.1);border-bottom:1px solid rgba(44,58,40,0.1);">
+  <div style="max-width:640px;margin:0 auto;">
+    <p style="font-size:11px;font-weight:400;letter-spacing:.35em;text-transform:uppercase;color:#C4973A;margin-bottom:16px;">Coming Soon</p>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);color:#2C3A28;line-height:1.3;margin-bottom:16px;">The future of hospitality is <em style="font-style:italic;color:#C4973A;">personal.</em></h3>
+    <p style="font-size:15px;color:#2C3A28;opacity:0.75;line-height:1.8;margin-bottom:28px;">We're building an app that rewards you for the life you're already living — earn Meat Points for everyday wins, spend them on dinners, cafes, gyms, and experiences nobody else is rewarding you for.</p>
+    <button class="btn-ghost" style="border-color:#2C3A28;color:#2C3A28;" onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">See What's Coming →</button>
+  </div>
+</div>
 
 <!-- THE SHORT VERSION -->
 <!-- MISSION -->
@@ -1817,6 +1862,64 @@ function closeMobileNavAndGo(id){
     <p class="philosophy-body">I don't take the spotlight — I give it. I create the room, hand you the mic, and let you tell your story. That's why people open up: I'm not trying to take their space. I'm trying to make space for them.</p>
     <p class="philosophy-body">The chef. The operator. The person across the table. Everyone has something worth being heard. My job is to build the moment where it can be.</p>
     <div class="philosophy-attr">— Holden Krivelin, Founder &amp; CEO</div>
+  </div>
+</div>
+
+<!-- HOLDEN'S ORIGIN STORY -->
+<div class="section-wrap" id="story" style="background:#EDE7D8;padding:100px 40px;margin:0;max-width:100%;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label" style="justify-content:center;margin-bottom:30px;">The Origin</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:60px;">How this started</h2>
+    
+    <div style="max-width:700px;margin:0 auto;">
+      <div style="background:#F7F3EC;padding:36px;margin-bottom:32px;border:1px solid rgba(196,151,58,0.15);">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:#2C3A28;margin-bottom:16px;">The Breaking Point</h3>
+        <p style="font-size:15px;color:#6B7A66;line-height:1.85;margin-bottom:12px;">It was a day like any other. A meeting with my mom and brother at breakfast. We were discussing the possibility of me getting fired from my day job. The suggestion was to consider alternatives: post office, corrections.</p>
+        <p style="font-size:15px;color:#6B7A66;line-height:1.85;">That was the moment I felt like my life was completely over. I was defeated. I thought, <strong style="color:#2C3A28;">"This is it."</strong></p>
+      </div>
+
+      <div style="background:#F7F3EC;padding:36px;margin-bottom:32px;border:1px solid rgba(196,151,58,0.15);">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:#2C3A28;margin-bottom:16px;">The Discovery</h3>
+        <p style="font-size:15px;color:#6B7A66;line-height:1.85;margin-bottom:12px;">While walking one day doing outside sales, I came across a place called <strong style="color:#2C3A28;">Thirty Love</strong>. It was closed. For lease.</p>
+        <p style="font-size:15px;color:#6B7A66;line-height:1.85;">I felt the pain. Something beautiful, just gone. And nobody would even know it ever existed. That's when I decided: there has to be something I can create.</p>
+      </div>
+
+      <div style="background:#F7F3EC;padding:36px;margin-bottom:32px;border:1px solid rgba(196,151,58,0.15);">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:#2C3A28;margin-bottom:16px;">The Idea</h3>
+        <p style="font-size:15px;color:#6B7A66;line-height:1.85;margin-bottom:12px;">A marketplace. Where creators and operators come together to build the next hospitality concept. I called it <strong style="color:#2C3A28;">MEAT.</strong></p>
+        <p style="font-size:15px;color:#6B7A66;line-height:1.85;">That night, I called my friend Nadia. She told me to check ChatGPT. ChatGPT said: <strong style="color:#2C3A28;">"You have something. To make it better — validation BEFORE lease? There's nothing like that out there."</strong></p>
+      </div>
+
+      <div style="background:#F7F3EC;padding:36px;margin-bottom:32px;border:1px solid rgba(196,151,58,0.15);">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:#2C3A28;margin-bottom:16px;">The Hustle</h3>
+        <p style="font-size:15px;color:#6B7A66;line-height:1.85;margin-bottom:12px;">I had no money for an LLC. No lawyers. No budget. So from 6pm to midnight, I put MEAT everywhere — made it so visible through sheer force of will that it became real.</p>
+        <p style="font-size:15px;color:#6B7A66;line-height:1.85;">That's how it happened.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROOF: BETH & SHARON TESTIMONIALS -->
+<div style="background:#2C3A28;color:#F7F3EC;padding:120px 40px;margin:0;max-width:100%;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <p style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C4973A;margin-bottom:20px;font-weight:600;">Proof It Works</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,56px);font-weight:300;color:#F7F3EC;margin-bottom:60px;line-height:1.2;">What actually happens<br>when people show up</h2>
+    
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1000px;margin:0 auto;margin-bottom:60px;">
+      <div style="text-align:left;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,24px);font-style:italic;color:#F7F3EC;line-height:1.8;margin-bottom:32px;">"Just wanted to let you know that I truly enjoyed myself last night. Good food, making new friends definitely adds to the joy in life."</p>
+        <p style="font-size:16px;color:#C4973A;font-weight:600;margin-bottom:4px;">Beth Hawkins</p>
+        <p style="font-size:13px;color:rgba(247,243,236,0.7);">Park Slope • April 23, 2026</p>
+      </div>
+
+      <div style="text-align:left;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,24px);font-style:italic;color:#F7F3EC;line-height:1.8;margin-bottom:32px;">"Thank you again for such a lovely event. The reveal was incredible — it looked like a regular Irish pub but then you walked in back into a little magical, speakeasy environment."</p>
+        <p style="font-size:16px;color:#C4973A;font-weight:600;margin-bottom:4px;">Sharon Malcolm</p>
+        <p style="font-size:13px;color:rgba(247,243,236,0.7);">Brooklyn • April 23, 2026</p>
+      </div>
+    </div>
+
+    <button class="btn-gold" onclick="scrollToWaitlist()" style="background:#C4973A;color:#2C3A28;padding:16px 40px;font-size:14px;">See What's Next →</button>
   </div>
 </div>
 
@@ -2199,7 +2302,41 @@ function closeMobileNavAndGo(id){
       <span></span><span class="pc-diamond">◆</span><span></span>
     </div>
     <p class="podcast-body">Real conversations about building MEAT Hospitality Group from the ground up — the wins, the setbacks, and everything in between. New episodes weekly.</p>
+    <div style="max-width:560px;margin:32px auto 24px;border-radius:12px;overflow:hidden;">
+      <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/show/7n7DseikNZ9vinU5Oszyit?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
     <a class="podcast-cta" href="https://open.spotify.com/show/7n7DseikNZ9vinU5Oszyit" onclick="if(typeof gtag==='function'){gtag('event','podcast_click',{event_category:'engagement'});}" target="_blank">Listen on Spotify →</a>
+  </div>
+</div>
+
+<!-- MEATIE MATCH QUIZ -->
+<div style="background:#F7F3EC;padding:90px 40px;text-align:center;">
+  <p style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#C4973A;margin-bottom:16px;">Try the App</p>
+  <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,4vw,42px);color:#2C3A28;margin-bottom:16px;">Find your first <em style="font-style:italic;color:#C4973A;">meatie.</em></h3>
+  <p style="font-size:15.7px;color:#2C3A28;opacity:0.75;max-width:480px;margin:0 auto 40px;line-height:1.8;">Answer a couple questions and see how MEAT would match you and suggest your first step.</p>
+
+  <div id="meatieQuiz" style="max-width:480px;margin:0 auto;background:#EDE7D8;border:1px solid rgba(44,58,40,0.1);padding:36px 28px;text-align:left;">
+    <div class="quiz-step" data-step="1">
+      <p style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#C4973A;margin-bottom:14px;">1 of 2 — Your vibe</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button class="quiz-option" data-q="1" data-val="Solo Explorer">Solo, at my own pace</button>
+        <button class="quiz-option" data-q="1" data-val="Social Connector">Social — bring people along</button>
+      </div>
+    </div>
+    <div class="quiz-step" data-step="2" style="display:none;">
+      <p style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#C4973A;margin-bottom:14px;">2 of 2 — Your rhythm</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button class="quiz-option" data-q="2" data-val="Morning Mover">Morning person</button>
+        <button class="quiz-option" data-q="2" data-val="Night Owl">Night owl</button>
+      </div>
+    </div>
+    <div class="quiz-step" data-step="result" style="display:none;text-align:center;">
+      <p style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#C4973A;margin-bottom:14px;">Your MEAT Match</p>
+      <p id="quizResultType" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:#2C3A28;margin-bottom:16px;"></p>
+      <p id="quizResultStep" style="font-size:14.6px;color:#2C3A28;opacity:0.8;line-height:1.8;margin-bottom:20px;"></p>
+      <button class="btn-gold" onclick="scrollToWaitlist()">Join the Waitlist →</button>
+      <button onclick="resetMeatieQuiz()" style="display:block;margin:14px auto 0;background:none;border:none;font-size:12.3px;letter-spacing:.1em;text-transform:uppercase;color:#2C3A28;opacity:0.5;cursor:pointer;">Start Over</button>
+    </div>
   </div>
 </div>
 
@@ -2250,6 +2387,37 @@ function closeMobileNavAndGo(id){
     <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">A hospitality company traditionally serves guests in one location. MEAT connects people across many kinds of experiences — while staying true to hospitality at its core.</p>
     <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(26.9px,3.78vw,40.3px);color:#F7F3EC !important;line-height:1.4;margin-top:48px;padding-top:48px;border-top:1px solid rgba(196,151,58,0.3);">MEAT is where people discover experiences, create connections, and <em style="font-style:italic;color:#C4973A !important;">build community.</em></p>
     <p style="font-size:12.3px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,243,236,0.4) !important;margin-top:32px;">Coming Soon · One experience at a time</p>
+
+    <!-- MEAT POINTS CALCULATOR -->
+    <div style="max-width:520px;margin:56px auto 0;background:rgba(247,243,236,0.06);border:1px solid rgba(196,151,58,0.35);padding:36px 28px;text-align:left;">
+      <p style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#C4973A !important;text-align:center;margin-bottom:8px;">Try It</p>
+      <h4 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:24px;color:#F7F3EC !important;text-align:center;margin-bottom:24px;">What could you earn this week?</h4>
+      <div id="pointsCalc" style="display:flex;flex-direction:column;gap:12px;">
+        <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14.6px;color:rgba(247,243,236,0.85) !important;cursor:pointer;">
+          <span>Grab coffee or run an errand</span>
+          <input type="checkbox" class="meat-pts-input" data-solo="10" data-meatie="20" style="width:20px;height:20px;accent-color:#C4973A;">
+        </label>
+        <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14.6px;color:rgba(247,243,236,0.85) !important;cursor:pointer;">
+          <span>Try somewhere new</span>
+          <input type="checkbox" class="meat-pts-input" data-solo="10" data-meatie="20" style="width:20px;height:20px;accent-color:#C4973A;">
+        </label>
+        <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14.6px;color:rgba(247,243,236,0.85) !important;cursor:pointer;">
+          <span>Work on an idea you've been avoiding</span>
+          <input type="checkbox" class="meat-pts-input" data-solo="10" data-meatie="20" style="width:20px;height:20px;accent-color:#C4973A;">
+        </label>
+        <label style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14.6px;color:rgba(247,243,236,0.85) !important;cursor:pointer;">
+          <span>Send the email you've been avoiding</span>
+          <input type="checkbox" class="meat-pts-input" data-solo="10" data-meatie="20" style="width:20px;height:20px;accent-color:#C4973A;">
+        </label>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding-top:16px;border-top:1px solid rgba(196,151,58,0.25);">
+          <span style="font-size:14.6px;color:rgba(247,243,236,0.85) !important;">Done with a meatie instead of solo?</span>
+          <input type="checkbox" id="meatieToggle" style="width:20px;height:20px;accent-color:#C4973A;">
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:28px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17.9px;color:rgba(247,243,236,0.7) !important;">This week you'd earn</p>
+      <p style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:56px;color:#C4973A !important;font-weight:600;line-height:1.1;" id="pointsTotal">0</p>
+      <p style="text-align:center;font-size:12.3px;letter-spacing:.15em;text-transform:uppercase;color:rgba(247,243,236,0.5) !important;">Meat Points</p>
+    </div>
   </div>
 </div>
 
@@ -2771,6 +2939,22 @@ function closeMobileNavAndGo(id){
   </div>
 </div>
 
+<!-- FOLLOW THE JOURNEY -->
+<div style="background:#EDE7D8;padding:70px 40px;text-align:center;">
+  <p style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#C4973A;margin-bottom:16px;">Follow the Journey</p>
+  <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,3.4vw,32px);color:#2C3A28;margin-bottom:28px;">It's happening in <em style="font-style:italic;color:#C4973A;">real time.</em></h3>
+  <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;max-width:600px;margin:0 auto;">
+    <a href="https://instagram.com/holden.meathospitalitygroup" target="_blank" style="flex:1;min-width:220px;background:#2C3A28;color:#F7F3EC;padding:22px 20px;text-decoration:none;">
+      <div style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#C4973A;margin-bottom:4px;">@holden.meathospitalitygroup</div>
+      <div style="font-size:13px;opacity:0.7;">Follow the founder's day-to-day →</div>
+    </a>
+    <a href="https://instagram.com/meathospitalitygroup" target="_blank" style="flex:1;min-width:220px;background:#2C3A28;color:#F7F3EC;padding:22px 20px;text-decoration:none;">
+      <div style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#C4973A;margin-bottom:4px;">@meathospitalitygroup</div>
+      <div style="font-size:13px;opacity:0.7;">Dinners, drops, and behind the scenes →</div>
+    </a>
+  </div>
+</div>
+
 <!-- WAYS TO COME -->
 <div class="section-divider"></div>
 <div class="section-wrap" id="tiers">
@@ -2992,6 +3176,29 @@ function closeMobileNavAndGo(id){
   <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.6vw,24px);color:#C4973A !important;text-align:center;max-width:560px;margin:0 auto 24px;line-height:1.6;">We call it the <strong style="color:#F7F3EC !important;font-style:normal;">MEAT Universe.</strong></p>
   <p style="font-size:clamp(16px,2.2vw,20px);color:#F7F3EC !important;font-weight:500;text-align:center;line-height:1.7;max-width:560px;margin:0 auto 56px;padding:20px 24px;border:1px solid rgba(196,151,58,0.4);">In short: one dinner hosted, 291 on the waitlist, an app in development, and two ways in — invest in the ecosystem, or help us build it.</p>
 
+  <!-- THE NARRATIVE -->
+  <p style="font-size:12.3px;letter-spacing:.24em;text-transform:uppercase;color:#C4973A !important;text-align:center;margin-bottom:12px;">Why This, Why Now</p>
+  <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24.6px,3.78vw,33.6px);color:#F7F3EC !important;text-align:center;margin-bottom:32px;">One loop. <em style="font-style:italic;color:#C4973A !important;">Not six products.</em></h3>
+  <div style="max-width:760px;margin:0 auto 64px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(247,243,236,0.15);">
+    <div style="background:rgba(247,243,236,0.06);padding:28px 24px;">
+      <div style="font-size:12.3px;letter-spacing:.18em;text-transform:uppercase;color:#C4973A !important;margin-bottom:10px;">The Problem</div>
+      <p style="font-size:14.6px;color:rgba(247,243,236,0.72) !important;line-height:1.8;">Hospitality is either exclusive and paywalled, or transactional and forgotten the next day. Nothing rewards people for consistently showing up to their own life.</p>
+    </div>
+    <div style="background:rgba(247,243,236,0.06);padding:28px 24px;">
+      <div style="font-size:12.3px;letter-spacing:.18em;text-transform:uppercase;color:#C4973A !important;margin-bottom:10px;">The Insight</div>
+      <p style="font-size:14.6px;color:rgba(247,243,236,0.72) !important;line-height:1.8;">Most rewards products measure screen time. MEAT measures real-world first steps — and rewards the life you're already living.</p>
+    </div>
+    <div style="background:rgba(247,243,236,0.06);padding:28px 24px;">
+      <div style="font-size:12.3px;letter-spacing:.18em;text-transform:uppercase;color:#C4973A !important;margin-bottom:10px;">The Wedge</div>
+      <p style="font-size:14.6px;color:rgba(247,243,236,0.72) !important;line-height:1.8;">Intimate chef concept dinners — Meatsperiences — where strangers become community in one room. Real demand, low burn, a direct line to our audience.</p>
+    </div>
+    <div style="background:rgba(247,243,236,0.06);padding:28px 24px;">
+      <div style="font-size:12.3px;letter-spacing:.18em;text-transform:uppercase;color:#C4973A !important;margin-bottom:10px;">The Platform</div>
+      <p style="font-size:14.6px;color:rgba(247,243,236,0.72) !important;line-height:1.8;">The MEAT app: earn Meat Points for everyday wins, redeem them across dinners, cafes, gyms, spas, and ground-floor concepts before they open.</p>
+    </div>
+  </div>
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.6vw,24px);color:#C4973A !important;text-align:center;max-width:600px;margin:0 auto 64px;line-height:1.6;">We're not raising to build six things. We're raising to prove one loop — dinners to app to rewards — in one flagship market before we expand.</p>
+
   <!-- THE MODEL -->
   <p style="font-size:12.3px;letter-spacing:.24em;text-transform:uppercase;color:#C4973A !important;text-align:center;margin-bottom:12px;">The Model</p>
   <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24.6px,3.78vw,33.6px);color:#F7F3EC !important;text-align:center;margin-bottom:32px;">One story, told <em style="font-style:italic;color:#C4973A !important;">four ways.</em></h3>
@@ -3023,19 +3230,19 @@ function closeMobileNavAndGo(id){
   <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24.6px,3.78vw,33.6px);color:#F7F3EC !important;text-align:center;margin-bottom:32px;">Early, but <em style="font-style:italic;color:#C4973A !important;">real.</em></h3>
   <div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(247,243,236,0.15);max-width:900px;margin:0 auto 8px;">
     <div style="flex:1;min-width:150px;background:rgba(247,243,236,0.06);padding:30px 20px;text-align:center;">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:35.8px;color:#F7F3EC !important;font-weight:600;">1</div>
+      <div class="count-stat" data-count="1" style="font-family:'Cormorant Garamond',serif;font-size:35.8px;color:#F7F3EC !important;font-weight:600;">0</div>
       <div style="font-size:12.3px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,236,0.55) !important;margin-top:8px;">Dinners Hosted</div>
     </div>
     <div style="flex:1;min-width:150px;background:rgba(247,243,236,0.06);padding:30px 20px;text-align:center;">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:35.8px;color:#F7F3EC !important;font-weight:600;">4+</div>
+      <div class="count-stat" data-count="4" data-suffix="+" style="font-family:'Cormorant Garamond',serif;font-size:35.8px;color:#F7F3EC !important;font-weight:600;">0</div>
       <div style="font-size:12.3px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,236,0.55) !important;margin-top:8px;">Chef Conversations</div>
     </div>
     <div style="flex:1;min-width:150px;background:rgba(247,243,236,0.06);padding:30px 20px;text-align:center;">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:35.8px;color:#F7F3EC !important;font-weight:600;">291</div>
+      <div class="count-stat" data-count="291" style="font-family:'Cormorant Garamond',serif;font-size:35.8px;color:#F7F3EC !important;font-weight:600;">0</div>
       <div style="font-size:12.3px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,236,0.55) !important;margin-top:8px;">Waitlist Signups</div>
     </div>
     <div style="flex:1;min-width:150px;background:rgba(247,243,236,0.06);padding:30px 20px;text-align:center;">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:35.8px;color:#F7F3EC !important;font-weight:600;">1</div>
+      <div class="count-stat" data-count="1" style="font-family:'Cormorant Garamond',serif;font-size:35.8px;color:#F7F3EC !important;font-weight:600;">0</div>
       <div style="font-size:12.3px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,236,0.55) !important;margin-top:8px;">Cities / Markets</div>
     </div>
   </div>
@@ -3270,6 +3477,17 @@ function closeMobileNavAndGo(id){
   </div>
 </div>
 
+<!-- MEAT EMPIRE CTA -->
+<div style="background:linear-gradient(135deg,#2C3A28 0%,#344030 100%);color:#F7F3EC;padding:120px 40px;text-align:center;border-top:1px solid rgba(196,151,58,0.2);">
+  <div style="max-width:900px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:0.35em;text-transform:uppercase;color:#C4973A;margin-bottom:20px;font-weight:600;">More Than Dinners</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,56px);font-weight:300;color:#F7F3EC;margin-bottom:24px;line-height:1.2;">We're building <em style="font-style:italic;color:#C4973A;">validation for creators.</em></h2>
+    <p style="font-size:17px;color:rgba(247,243,236,0.85);line-height:1.9;max-width:700px;margin:0 auto 40px;">If you're a chef, operator, or creator with an idea — you don't need permission. You don't need to be ready. You need an idea and the willingness to take one step. Everything else, we provide.</p>
+    <p style="font-size:15px;color:rgba(247,243,236,0.75);line-height:1.8;max-width:650px;margin:0 auto 48px;font-style:italic;">MEAT Empire is where ideas get validated before the risk. Where operators get tools. Where chefs get a platform. Where creators become something.</p>
+    <a href="https://meatempire.net" target="_blank" style="display:inline-block;padding:16px 48px;background:#C4973A;color:#2C3A28;font-family:'Jost',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:4px;transition:all 0.3s ease;" onmouseover="this.style.background='#D4A84B'" onmouseout="this.style.background='#C4973A'">Explore MEAT Empire →</a>
+  </div>
+</div>
+
 <footer style="background:#E4DDD0;border-top:1px solid rgba(44,58,40,0.15);">
   <div style="margin-bottom:24px;">
     <img src="data:image/webp;base64,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" alt="" style="height:64px;width:64px;object-fit:contain;filter:none;opacity:0.7;"/>
@@ -3475,6 +3693,121 @@ document.addEventListener('keydown', function(e){
     
   </div>
 </div>
+
+<script>
+window.addEventListener('scroll', function(){
+  var doc = document.documentElement;
+  var scrollTop = doc.scrollTop || document.body.scrollTop;
+  var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+  var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  document.getElementById('scrollProgress').style.width = pct + '%';
+}, {passive:true});
+
+// COUNT-UP STATS
+document.addEventListener('DOMContentLoaded', function(){
+  var statEls = document.querySelectorAll('.count-stat');
+  var statObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1200;
+        var start = null;
+        function step(ts){
+          if(!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          el.textContent = Math.floor(progress * target) + suffix;
+          if(progress < 1){ requestAnimationFrame(step); }
+          else { el.textContent = target + suffix; }
+        }
+        requestAnimationFrame(step);
+        statObserver.unobserve(el);
+      }
+    });
+  }, {threshold:0.4});
+  statEls.forEach(function(el){ statObserver.observe(el); });
+
+  // SCROLL-REVEAL
+  var revealSelectors = '.welcome-band, .philosophy-band, .dinner-002-band, .section-wrap, .merch-band, .roadmap-band, .little-wins-band, .podcast-band, #platform, .eco-band, .blueprint-band, #lifelovemeathood, .waitlist-section, #investors, #founder';
+  var revealEls = document.querySelectorAll(revealSelectors);
+  var revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0, rootMargin:'0px 0px -5% 0px'});
+  revealEls.forEach(function(el){
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+  });
+  // Safety net: never let a section stay permanently hidden
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }, 2500);
+
+  // MEAT POINTS CALCULATOR
+  var pointsInputs = document.querySelectorAll('.meat-pts-input');
+  var meatieToggle = document.getElementById('meatieToggle');
+  var pointsTotal = document.getElementById('pointsTotal');
+  function recalcPoints(){
+    var total = 0;
+    var withMeatie = meatieToggle && meatieToggle.checked;
+    pointsInputs.forEach(function(input){
+      if(input.checked){
+        total += withMeatie ? parseInt(input.getAttribute('data-meatie'), 10) : parseInt(input.getAttribute('data-solo'), 10);
+      }
+    });
+    if(pointsTotal){ pointsTotal.textContent = total; }
+  }
+  pointsInputs.forEach(function(input){ input.addEventListener('change', recalcPoints); });
+  if(meatieToggle){ meatieToggle.addEventListener('change', recalcPoints); }
+
+  // DARK MODE (persisted)
+  if(localStorage.getItem('meatDarkMode') === 'on'){ document.body.classList.add('dark-mode'); }
+
+  // MEATIE MATCH QUIZ
+  var quizAnswers = {};
+  var quizResults = {
+    'Solo Explorer|Morning Mover': ['The Early Riser', 'Solo sunrise coffee run, then a quiet first step on that idea you\'ve been sitting on. 10 Meat Points, no meatie required.'],
+    'Solo Explorer|Night Owl': ['The Independent Wanderer', 'A solo late dinner somewhere new, or finally sending that email after hours. Your pace, your points.'],
+    'Social Connector|Morning Mover': ['The Rally Starter', 'Grab a meatie for morning coffee and knock out errands together. 20 Meat Points when you team up.'],
+    'Social Connector|Night Owl': ['The Night Connector', 'Find a meatie for a late dinner or a new spot neither of you has tried. Double points, double the story.']
+  };
+  document.querySelectorAll('.quiz-option').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var q = btn.getAttribute('data-q');
+      quizAnswers[q] = btn.getAttribute('data-val');
+      if(q === '1'){
+        document.querySelector('.quiz-step[data-step="1"]').style.display = 'none';
+        document.querySelector('.quiz-step[data-step="2"]').style.display = 'block';
+      } else {
+        var key = quizAnswers['1'] + '|' + quizAnswers['2'];
+        var result = quizResults[key];
+        document.querySelector('.quiz-step[data-step="2"]').style.display = 'none';
+        document.getElementById('quizResultType').textContent = result[0];
+        document.getElementById('quizResultStep').textContent = result[1];
+        document.querySelector('.quiz-step[data-step="result"]').style.display = 'block';
+      }
+    });
+  });
+});
+
+function toggleDarkMode(){
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('meatDarkMode', document.body.classList.contains('dark-mode') ? 'on' : 'off');
+}
+
+function resetMeatieQuiz(){
+  document.querySelector('.quiz-step[data-step="result"]').style.display = 'none';
+  document.querySelector('.quiz-step[data-step="2"]').style.display = 'none';
+  document.querySelector('.quiz-step[data-step="1"]').style.display = 'block';
+}
+</script>
 
 </body>
 </html>
