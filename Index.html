@@ -1377,10 +1377,14 @@ footer a:hover{opacity:1}
 }
 .blueprint-cat-title{
   font-size:12.3px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:12px;
+  color:var(--gold);margin-bottom:0;display:flex;align-items:center;gap:12px;
+  cursor:pointer;list-style:none;
 }
+.blueprint-cat-title::-webkit-details-marker{display:none}
 .blueprint-cat-title::after{content:'';flex:1;height:1px;background:rgba(122,146,112,0.3)}
-.blueprint-items{display:flex;flex-direction:column;gap:14px}
+.blueprint-cat-toggle{font-size:16px;color:var(--gold);transition:transform .2s;flex-shrink:0;}
+.blueprint-category[open] .blueprint-cat-toggle{transform:rotate(45deg);}
+.blueprint-items{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
 .blueprint-item{
   display:flex;align-items:center;justify-content:space-between;gap:12px;
   padding-bottom:14px;border-bottom:1px solid rgba(44,58,40,0.08);
@@ -1789,7 +1793,15 @@ function closeMobileNavAndGo(id){
       <h3 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,3.6vw,36px);color:#F7F3EC !important;line-height:1.3;margin-bottom:24px;">Making experiences <em style="font-style:italic;color:#7A9270 !important;">universally accessible.</em></h3>
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.6vw,24px);color:#7A9270 !important;line-height:1.6;max-width:600px;margin:0 auto 32px;">"Your wallet shouldn't be the only thing determining which rooms you get access to."</p>
       <p style="font-size:clamp(16px,2.2vw,20px);color:#F7F3EC !important;font-weight:500;line-height:1.7;max-width:600px;margin:0 auto 40px;padding:20px 24px;border:1px solid rgba(122,146,112,0.4);">In short: do the everyday things you already do. Earn Meat Points. Redeem them across dinners, cafes, gyms, and more.</p>
-      <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Too many great experiences are gated behind a paywall — reserved for whoever can already afford them. We don't think access should work that way. It shouldn't matter who you know or what you can spend. It should matter that you're willing to take the first step.</p>
+
+      <details style="max-width:680px;margin:0 auto;text-align:left;">
+        <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:14px;padding:16px 32px;border:1px solid rgba(122,146,112,0.5);color:#7A9270 !important;font-size:12.3px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;max-width:340px;margin:0 auto;">
+          <span>How MEAT Points Work</span>
+          <span class="app-toggle" style="font-size:18px;transition:transform .2s;">+</span>
+        </summary>
+<style>details:has(> summary .app-toggle)[open] > summary .app-toggle{transform:rotate(45deg);}</style>
+
+      <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:32px auto 24px;">Too many great experiences are gated behind a paywall — reserved for whoever can already afford them. We don't think access should work that way. It shouldn't matter who you know or what you can spend. It should matter that you're willing to take the first step.</p>
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">That's why we're building <strong style="color:#F7F3EC !important;font-weight:600;">Meat Points</strong> — earned not just by spending, but by living. Getting up and out of the house. Talking to someone new. Starting the thing you've been putting off. Asking the question you've been too nervous to ask. Every step forward earns you points, and points unlock access — a seat at a dinner, entry into new tiers, experiences that used to be reserved for whoever could already afford them. The reward for growing is more access to grow.</p>
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Every verified check-in earns <strong style="color:#F7F3EC !important;font-weight:600;">10 Meat Points</strong> — and if you complete it with a meatie, that jumps to <strong style="color:#F7F3EC !important;font-weight:600;">20</strong>. Show up for your life, and the points add up fast.</p>
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Just Keep Meating reminders send a quick nudge in the morning to get you excited for your tasks that day — "Good morning. Just Keep Meating — here are your reminders for today."</p>
@@ -1806,6 +1818,7 @@ function closeMobileNavAndGo(id){
       <h3 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,4.4vw,52px);color:#F7F3EC !important;line-height:1.25;margin-top:56px;">Welcome to <em style="font-style:italic;color:#7A9270 !important;">a new era of rewards</em> — and a new way to live your everyday life.</h3>
       <p style="font-size:clamp(16px,2.1vw,19.5px);color:rgba(247,243,236,0.85) !important;line-height:1.9;font-weight:300;max-width:560px;margin:16px auto 0;">Because waking up is hard enough. Let's reward you for what you do every day.</p>
       <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:clamp(20px,2.8vw,26px);letter-spacing:.14em;text-transform:uppercase;color:#7A9270 !important;margin-top:40px;">Let's MEAT.</p>
+      </details>
     </div>
   </div>
 </div>
@@ -2024,7 +2037,14 @@ function closeMobileNavAndGo(id){
       <span class="tagline-meat" style="font-size:clamp(49.3px,9.72vw,112px);">MEAT Hospitality Store Launch</span>
     </div>
 
-    <p class="merch-body">The mantra. The mindset. The reason every chef keeps going, every operator keeps building, and everyone at the table keeps coming back.</p>
+    <details style="max-width:600px;margin:0 auto;text-align:center;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:14px;padding:16px 32px;border:1px solid rgba(44,58,40,0.25);color:#7A9270;font-size:12.3px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;max-width:280px;margin:0 auto;">
+        <span>More Info</span>
+        <span class="merch-toggle" style="font-size:18px;transition:transform .2s;">+</span>
+      </summary>
+<style>.merch-band details[open] > summary .merch-toggle{transform:rotate(45deg);}</style>
+
+    <p class="merch-body" style="margin-top:32px;">The mantra. The mindset. The reason every chef keeps going, every operator keeps building, and everyone at the table keeps coming back.</p>
 
     <p class="merch-body" style="margin-top:12px;font-size:16.8px;">Not just clothing. A reminder. For every shape, every size, every season of life.</p>
 
@@ -2033,7 +2053,7 @@ function closeMobileNavAndGo(id){
       <div class="merch-drop-card">
         <div class="merch-drop-badge">
           <div class="merch-pulse"></div>
-          <span>MEAT Hospitality Store Launch · Coming Soon</span>
+          <span>Coming Soon</span>
           <div class="merch-pulse"></div>
         </div>
         <div class="merch-drop-title">The Store Is Coming</div>
@@ -2045,6 +2065,7 @@ function closeMobileNavAndGo(id){
       </div>
 
     </div>
+    </details>
 
   </div>
 </div>
@@ -2202,7 +2223,14 @@ function closeMobileNavAndGo(id){
     </div>
     <p style="font-size:clamp(16px,2.2vw,20px);color:#F7F3EC !important;font-weight:500;line-height:1.7;max-width:600px;margin:0 auto 48px;padding:20px 24px;border:1px solid rgba(122,146,112,0.4);">In short: tell MEAT who you are, get matched with meaties, take a first step (solo or together), earn Meat Points, and redeem them across dinners, cafes, gyms, and more.</p>
 
-    <div style="max-width:680px;margin:0 auto 48px;text-align:left;background:rgba(122,146,112,0.06);border-left:3px solid #7A9270;padding:32px 36px;">
+    <details style="max-width:680px;margin:0 auto;text-align:left;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:14px;padding:16px 32px;border:1px solid rgba(122,146,112,0.5);color:#7A9270 !important;font-size:12.3px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;max-width:340px;margin:0 auto;">
+        <span>How MEAT Works</span>
+        <span class="platform-toggle" style="font-size:18px;transition:transform .2s;">+</span>
+      </summary>
+<style>#platform details[open] > summary .platform-toggle{transform:rotate(45deg);}</style>
+
+    <div style="max-width:680px;margin:0 auto 48px;text-align:left;background:rgba(122,146,112,0.06);border-left:3px solid #7A9270;padding:32px 36px;margin-top:40px;">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.6vw,25px);color:#F7F3EC !important;line-height:1.6;margin-bottom:16px;">Never have that FOMO feeling again.</p>
       <p style="font-size:16px;color:rgba(247,243,236,0.75) !important;line-height:1.85;">Even if you can't make it to one of our events, you can still feel like you were there — through our merchandise, earning points for doing everyday things, and the chance to spend those points across MEAT Rewards. Your life just got a whole lot easier. That's the MEAT way of doing things.</p>
     </div>
@@ -2267,6 +2295,7 @@ function closeMobileNavAndGo(id){
     </div>
 
     <p style="font-size:12.3px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,243,236,0.4) !important;margin-top:48px;">Coming Soon · One experience at a time</p>
+    </details>
   </div>
 </div>
 
@@ -2328,8 +2357,8 @@ function closeMobileNavAndGo(id){
     <div class="blueprint-grid">
 
       <!-- FOUNDATION -->
-      <div class="blueprint-category">
-        <div class="blueprint-cat-title">Foundation</div>
+      <details class="blueprint-category" open>
+        <summary class="blueprint-cat-title">Foundation<span class="blueprint-cat-toggle">+</span></summary>
         <div class="blueprint-items">
           <div class="blueprint-item">
             <div class="blueprint-item-left"><div class="blueprint-dot done"></div><span class="blueprint-item-name">MEAT Hospitality Group Website</span></div>
@@ -2356,11 +2385,11 @@ function closeMobileNavAndGo(id){
             <span class="blueprint-badge badge-done">Completed</span>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- COMMUNITY -->
-      <div class="blueprint-category">
-        <div class="blueprint-cat-title">Community</div>
+      <details class="blueprint-category">
+        <summary class="blueprint-cat-title">Community<span class="blueprint-cat-toggle">+</span></summary>
         <div class="blueprint-items">
           <div class="blueprint-item">
             <div class="blueprint-item-left"><div class="blueprint-dot done"></div><span class="blueprint-item-name">Dinner 001</span></div>
@@ -2383,11 +2412,11 @@ function closeMobileNavAndGo(id){
             <div class="blueprint-item-left"><div class="blueprint-dot todo"></div><span class="blueprint-item-name">Chef Collaboration Series</span></div>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- BRAND -->
-      <div class="blueprint-category">
-        <div class="blueprint-cat-title">Brand</div>
+      <details class="blueprint-category">
+        <summary class="blueprint-cat-title">Brand<span class="blueprint-cat-toggle">+</span></summary>
         <div class="blueprint-items">
           <div class="blueprint-item">
             <div class="blueprint-item-left"><div class="blueprint-dot inprogress"></div><span class="blueprint-item-name">Just Keep MEATing™</span></div>
@@ -2400,11 +2429,11 @@ function closeMobileNavAndGo(id){
             <div class="blueprint-item-left"><div class="blueprint-dot todo"></div><span class="blueprint-item-name">Community Apparel</span></div>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- CONTENT -->
-      <div class="blueprint-category">
-        <div class="blueprint-cat-title">Content</div>
+      <details class="blueprint-category">
+        <summary class="blueprint-cat-title">Content<span class="blueprint-cat-toggle">+</span></summary>
         <div class="blueprint-items">
           <div class="blueprint-item">
             <div class="blueprint-item-left"><div class="blueprint-dot inprogress"></div><span class="blueprint-item-name">First Book</span></div>
@@ -2420,11 +2449,11 @@ function closeMobileNavAndGo(id){
             <div class="blueprint-item-left"><div class="blueprint-dot todo"></div><span class="blueprint-item-name">Behind-the-Scenes Series</span></div>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- COMMUNITY IMPACT -->
-      <div class="blueprint-category">
-        <div class="blueprint-cat-title">Community Impact</div>
+      <details class="blueprint-category">
+        <summary class="blueprint-cat-title">Community Impact<span class="blueprint-cat-toggle">+</span></summary>
         <div class="blueprint-items">
           <div class="blueprint-item">
             <div class="blueprint-item-left"><div class="blueprint-dot todo"></div><span class="blueprint-item-name">Mentorship Program</span></div>
@@ -2439,11 +2468,11 @@ function closeMobileNavAndGo(id){
             <div class="blueprint-item-left"><div class="blueprint-dot todo"></div><span class="blueprint-item-name">Annual Philanthropy Dinner</span></div>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- LONG TERM -->
-      <div class="blueprint-category">
-        <div class="blueprint-cat-title">Long-Term</div>
+      <details class="blueprint-category">
+        <summary class="blueprint-cat-title">Long-Term<span class="blueprint-cat-toggle">+</span></summary>
         <div class="blueprint-items">
           <div class="blueprint-item">
             <div class="blueprint-item-left"><div class="blueprint-dot todo"></div><span class="blueprint-item-name">National Brand Partnerships</span></div>
@@ -2467,11 +2496,11 @@ function closeMobileNavAndGo(id){
             <div class="blueprint-item-left"><div class="blueprint-dot todo"></div><span class="blueprint-item-name">Master and His Piece</span></div>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- MEATLIFE PRODUCTIONS -->
-      <div class="blueprint-category" style="grid-column:1/-1;background:#2C3A28;border-top:3px solid #7A9270;">
-        <div class="blueprint-cat-title" style="color:#7A9270;">Meatlife Productions · Coming</div>
+      <details class="blueprint-category" style="grid-column:1/-1;background:#2C3A28;border-top:3px solid #7A9270;">
+        <summary class="blueprint-cat-title" style="color:#7A9270;">Meatlife Productions · Coming<span class="blueprint-cat-toggle" style="color:#7A9270;">+</span></summary>
         <p style="font-size:15.7px;color:rgba(247,243,236,0.75);line-height:1.9;font-weight:300;margin-bottom:28px;max-width:680px;">The company behind Discover Meatly, Little Wins Newsletter, Daily Wins, the Little Wins concept, and the Just Keep Meating Podcast. One vision. All produced under one company.</p>
         <div class="blueprint-items">
           <div class="blueprint-item" style="border-bottom-color:rgba(247,243,236,0.1);">
@@ -2500,7 +2529,7 @@ function closeMobileNavAndGo(id){
             <div class="blueprint-item-left"><div class="blueprint-dot todo" style="border-color:rgba(247,243,236,0.3);"></div><span class="blueprint-item-name" style="color:rgba(247,243,236,0.6);">Platform · TV · Distribution</span></div>
           </div>
         </div>
-      </div>
+      </details>
 
     </div>
 
@@ -2614,7 +2643,16 @@ function closeMobileNavAndGo(id){
     <span class="series-tag-text">A MEAT Hospitality Group Original Series · New York City</span>
     <span class="series-tag-line"></span>
   </div>
-  <p class="section-body">Discover Meatly is where we tell the stories of the New York venues that deserve to be remembered — before they become the next 30 Love. We sit down with the owners, chefs, and operators behind the rooms that make this city worth eating in, and we spotlight the food, the history, and the details most people walk right past. From West Village's Capone's Salumeria to Old Town Bar's delicious wings and unforgettable history, to the latest from New York's most prolific chefs — this is the city, room by room.</p>
+  <details class="book-entry" style="border:1px solid rgba(44,58,40,0.15);margin-bottom:24px;max-width:820px;">
+    <summary style="list-style:none;cursor:pointer;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;">
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#2C3A28;">Discover Meatly is where we tell the stories of NYC's rooms worth remembering.</span>
+      <span class="book-toggle" style="font-size:22px;color:#7A9270;flex-shrink:0;">+</span>
+    </summary>
+    <div style="padding:0 28px 24px;border-top:1px solid rgba(44,58,40,0.1);">
+      <p class="section-body" style="margin-top:20px;">Discover Meatly is where we tell the stories of the New York venues that deserve to be remembered — before they become the next 30 Love. We sit down with the owners, chefs, and operators behind the rooms that make this city worth eating in, and we spotlight the food, the history, and the details most people walk right past. From West Village's Capone's Salumeria to Old Town Bar's delicious wings and unforgettable history, to the latest from New York's most prolific chefs — this is the city, room by room.</p>
+    </div>
+  </details>
+  <style>.book-entry[open] .book-toggle{transform:rotate(45deg);display:inline-block;transition:transform .2s;}</style>
   
   <div class="series-stats-row">
     <div class="series-stat">
