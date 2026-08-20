@@ -237,7 +237,6 @@ body.large-text{font-size:112.5%}
   #founder{padding:70px 24px !important;}
   #a11yToggle{width:28px !important;height:28px !important;font-size:10px !important;margin-left:4px !important;}
   .firststeps-grid{grid-template-columns:1fr !important;}
-  #firststeps{padding-left:24px !important;padding-right:24px !important;}
   nav{padding-left:14px !important;padding-right:14px !important;}
   .btn-ghost{max-width:100%;box-sizing:border-box;word-break:break-word;}
   html,body{overflow-x:hidden;}
@@ -1689,6 +1688,8 @@ footer a:hover{opacity:1}
 
     <button class="nav-link" onclick="document.getElementById('merch').scrollIntoView({behavior:'smooth'})">Merch</button>
     <button class="nav-link" onclick="document.getElementById('store').scrollIntoView({behavior:'smooth'})">Store</button>
+    <button class="nav-link" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">The Mission</button>
+    <button class="nav-link" onclick="document.getElementById('business-model').scrollIntoView({behavior:'smooth'})">Business Model</button>
     <button class="nav-link" onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">MEAT App</button>
 
     <details class="nav-drop">
@@ -1728,6 +1729,8 @@ footer a:hover{opacity:1}
   <button class="nav-link" onclick="closeMobileNavAndGo('blueprint')">Blueprint</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('merch')">Merch</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('store')">Store</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('how-it-works')">The Mission</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('business-model')">Business Model</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('platform')">MEAT App</button>
 
   <p class="mobile-nav-section-label">About</p>
@@ -1949,28 +1952,31 @@ function closeMobileNavAndGo(id){
 </div>
 
 
-<!-- FIRST STEPS WALL -->
-<div class="section-wrap" id="firststeps" style="max-width:1100px;">
-  <p class="section-label" style="justify-content:center;margin-bottom:16px;">Proof It's Working</p>
-  <h2 class="section-title" style="text-align:center;">The <em>First Steps</em> wall.</h2>
-  <p class="section-body" style="text-align:center;max-width:640px;margin-left:auto;margin-right:auto;">Not guest reviews — first steps. The small, unglamorous move someone made that got them in the room. Submit yours and it might end up here, or in Little Wins.</p>
-  <div class="firststeps-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-light);border:1px solid var(--border-light);margin-top:48px;">
-    <div style="background:#EDE7D8;padding:36px 30px;">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19.6px;color:rgba(44,58,40,0.8);line-height:1.55;margin-bottom:18px;">"I almost didn't reply to the DM. Figured a room like that wasn't for someone like me. Went anyway. Best wrong assumption I've made all year."</p>
-      <p style="font-size:12.3px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);">First-Timer · Dinner 001</p>
+<!-- WHERE WE ARE / WHERE WE SEE MEAT -->
+<div class="section-wrap" id="progress" style="max-width:1000px;">
+  <h2 class="section-title" style="text-align:center;">Where we are.<br>Where we see <em>MEAT.</em></h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--border-light);border:1px solid var(--border-light);margin-top:48px;">
+    <div style="background:#F7F3EC;padding:40px 34px;">
+      <p style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">What's True Today</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="font-size:15.5px;color:rgba(44,58,40,0.78);padding:10px 0;border-bottom:1px solid rgba(44,58,40,0.1);">One dinner hosted, in New York City</li>
+        <li style="font-size:15.5px;color:rgba(44,58,40,0.78);padding:10px 0;border-bottom:1px solid rgba(44,58,40,0.1);">Conversations underway with 4+ chefs</li>
+        <li style="font-size:15.5px;color:rgba(44,58,40,0.78);padding:10px 0;border-bottom:1px solid rgba(44,58,40,0.1);">291 people on the waitlist</li>
+        <li style="font-size:15.5px;color:rgba(44,58,40,0.78);padding:10px 0;">Founder-operated, self-funded, early-stage</li>
+      </ul>
     </div>
-    <div style="background:#EDE7D8;padding:36px 30px;">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19.6px;color:rgba(44,58,40,0.8);line-height:1.55;margin-bottom:18px;">"My first step was just telling one person my concept out loud. Hadn't said it to anyone before that. Six weeks later I was presenting it to a table of strangers."</p>
-      <p style="font-size:12.3px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);">Chef Collaborator</p>
-    </div>
-    <div style="background:#EDE7D8;padding:36px 30px;">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19.6px;color:rgba(44,58,40,0.8);line-height:1.55;margin-bottom:18px;">"Went alone. Didn't know a soul. Left with three phone numbers and a reason to get up early the next morning. That's the whole thing, really."</p>
-      <p style="font-size:12.3px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);">Guest of the House</p>
+    <div style="background:#EDE7D8;padding:40px 34px;">
+      <p style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">What We're Building Toward</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="font-size:15.5px;color:rgba(44,58,40,0.78);padding:10px 0;border-bottom:1px solid rgba(44,58,40,0.1);">A second dinner, then a regular rhythm of them</li>
+        <li style="font-size:15.5px;color:rgba(44,58,40,0.78);padding:10px 0;border-bottom:1px solid rgba(44,58,40,0.1);">The MEAT App, built and in people's hands</li>
+        <li style="font-size:15.5px;color:rgba(44,58,40,0.78);padding:10px 0;border-bottom:1px solid rgba(44,58,40,0.1);">A real community of meaties, not just a waitlist</li>
+        <li style="font-size:15.5px;color:rgba(44,58,40,0.78);padding:10px 0;">Real first steps, told by the real people who took them</li>
+      </ul>
     </div>
   </div>
-  <div style="text-align:center;margin-top:44px;">
-    <a class="btn-outline-gold" href="mailto:holdenkrivelin@meatapp.tech?subject=My%20First%20Step%20-%20MEAT%20Hospitality&body=Here's%20my%20first%20step%3A%0A%0A">Share Your First Step →</a>
-  </div>
+
 </div>
 
 
@@ -2261,6 +2267,139 @@ function closeMobileNavAndGo(id){
     </div>
     <p class="podcast-body">Real conversations about building MEAT Hospitality Group from the ground up — the wins, the setbacks, and everything in between. New episodes weekly.</p>
     <a class="podcast-cta" href="https://open.spotify.com/show/7n7DseikNZ9vinU5Oszyit" onclick="if(typeof gtag==='function'){gtag('event','podcast_click',{event_category:'engagement'});}" target="_blank">Listen on Spotify →</a>
+  </div>
+</div>
+
+<!-- HOW MEAT WORKS -->
+<div class="section-divider"></div>
+<div id="how-it-works" style="background:#F7F3EC;padding:100px 32px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;">The Mission, Simplified</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(32px,5vw,48px);color:#2C3A28;margin-bottom:40px;">How MEAT <em style="font-style:italic;color:#7A9270;">Works.</em></h2>
+
+    <div style="text-align:left;max-width:480px;margin:0 auto 40px;">
+      <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(44,58,40,0.12);"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#7A9270;font-size:18px;min-width:20px;">1</span><span style="font-size:15.5px;color:rgba(44,58,40,0.8);">MEAT helps you participate in your life.</span></div>
+      <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(44,58,40,0.12);"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#7A9270;font-size:18px;min-width:20px;">2</span><span style="font-size:15.5px;color:rgba(44,58,40,0.8);">Tell us your interests, goals, and what you want to accomplish.</span></div>
+      <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(44,58,40,0.12);"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#7A9270;font-size:18px;min-width:20px;">3</span><span style="font-size:15.5px;color:rgba(44,58,40,0.8);">We turn that into personalized first steps.</span></div>
+      <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(44,58,40,0.12);"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#7A9270;font-size:18px;min-width:20px;">4</span><span style="font-size:15.5px;color:rgba(44,58,40,0.8);">You complete them in the real world.</span></div>
+      <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(44,58,40,0.12);"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#7A9270;font-size:18px;min-width:20px;">5</span><span style="font-size:15.5px;color:rgba(44,58,40,0.8);">You check in or verify the action.</span></div>
+      <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(44,58,40,0.12);"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#7A9270;font-size:18px;min-width:20px;">6</span><span style="font-size:15.5px;color:rgba(44,58,40,0.8);">You earn MEAT Points.</span></div>
+      <div style="display:flex;gap:16px;padding:14px 0;"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#7A9270;font-size:18px;min-width:20px;">7</span><span style="font-size:15.5px;color:rgba(44,58,40,0.8);">Those points help unlock more experiences, rewards, and opportunities.</span></div>
+    </div>
+
+    <div style="background:#2C3A28;padding:32px 36px;">
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(19px,2.6vw,24px);color:#7A9270;margin-bottom:8px;">MEAT rewards participation, not attention.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(19px,2.6vw,24px);color:#F7F3EC;">We reward you for living.</p>
+    </div>
+  </div>
+</div>
+
+<!-- HOW MEAT MAKES MONEY -->
+<div class="section-divider"></div>
+<div id="business-model" style="background:#EDE7D8;padding:100px 32px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;">The Business</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(32px,5vw,48px);color:#2C3A28;margin-bottom:28px;">How MEAT <em style="font-style:italic;color:#7A9270;">Makes Money.</em></h2>
+
+    <p style="font-size:16px;color:rgba(44,58,40,0.75);line-height:1.85;margin-bottom:28px;">MEAT is building multiple revenue streams around one ecosystem:</p>
+
+    <ul style="list-style:none;text-align:left;max-width:440px;margin:0 auto 36px;font-size:15.5px;color:rgba(44,58,40,0.8);line-height:2.1;">
+      <li style="padding-left:20px;position:relative;">Paid experiences and dinners<span style="position:absolute;left:0;color:#7A9270;">—</span></li>
+      <li style="padding-left:20px;position:relative;">Brand and venue partnerships<span style="position:absolute;left:0;color:#7A9270;">—</span></li>
+      <li style="padding-left:20px;position:relative;">Commerce through storemhg.com<span style="position:absolute;left:0;color:#7A9270;">—</span></li>
+      <li style="padding-left:20px;position:relative;">Future premium digital features or memberships<span style="position:absolute;left:0;color:#7A9270;">—</span></li>
+      <li style="padding-left:20px;position:relative;">Creator services and commercial partnerships through MEAT Empire<span style="position:absolute;left:0;color:#7A9270;">—</span></li>
+      <li style="padding-left:20px;position:relative;">Partner-funded rewards and offers<span style="position:absolute;left:0;color:#7A9270;">—</span></li>
+      <li style="padding-left:20px;position:relative;">Sponsorships and collaborations<span style="position:absolute;left:0;color:#7A9270;">—</span></li>
+    </ul>
+
+    <div style="border-left:3px solid #7A9270;background:rgba(122,146,112,0.08);padding:24px 28px;text-align:left;margin-bottom:24px;">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.2vw,20px);color:#2C3A28;line-height:1.6;">Not every part of MEAT needs to be the highest-margin part of the company. Each part should strengthen the ecosystem as a whole.</p>
+    </div>
+
+    <p style="font-size:15px;color:rgba(44,58,40,0.65);line-height:1.85;">The dinners may not be the money machine. They create trust, content, relationships, social proof, and discovery — people who later participate elsewhere in MEAT.</p>
+  </div>
+</div>
+
+<!-- WHY PARTNERS PARTICIPATE -->
+<div class="section-divider"></div>
+<div id="partners" style="background:#F7F3EC;padding:90px 32px;text-align:center;">
+  <div style="max-width:600px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;">For Brands &amp; Venues</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,4.4vw,40px);color:#2C3A28;margin-bottom:24px;">Why Partners <em style="font-style:italic;color:#7A9270;">Participate.</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.2vw,20px);color:#2C3A28;line-height:1.6;margin-bottom:24px;">Partners don't just advertise on MEAT. They help people live through it.</p>
+    <p style="font-size:15.5px;color:rgba(44,58,40,0.75);line-height:1.9;">Restaurants, gyms, venues, creators, and brands can fund rewards, host experiences, or offer benefits to Meaties who actually complete real-world actions. That gives partners something much stronger than impressions: verified participation.</p>
+  </div>
+</div>
+
+<!-- WHAT MEAT IS NOT -->
+<div class="section-divider"></div>
+<div id="what-meat-is-not" style="background:#2C3A28;padding:90px 32px;text-align:center;">
+  <div style="max-width:560px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:32px;">The Contrast</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.6vw,24px);color:rgba(247,243,236,0.55);line-height:1.9;margin-bottom:10px;">MEAT is not another social feed.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.6vw,24px);color:rgba(247,243,236,0.55);line-height:1.9;margin-bottom:10px;">MEAT is not a productivity app designed to shame you.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.6vw,24px);color:rgba(247,243,236,0.55);line-height:1.9;margin-bottom:32px;">MEAT is not a rewards program built only around spending.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(22px,3.2vw,29px);color:#7A9270;line-height:1.5;">MEAT is technology designed to help you leave technology and participate in your life.</p>
+  </div>
+</div>
+
+<!-- THE MEAT FLYWHEEL -->
+<div class="section-divider"></div>
+<div id="flywheel" style="background:#F7F3EC;padding:100px 32px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;">Why It Compounds</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,4.6vw,44px);color:#2C3A28;margin-bottom:36px;">The MEAT <em style="font-style:italic;color:#7A9270;">Flywheel.</em></h2>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:32px;">
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">People participate</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Earn points</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Discover experiences</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Visit partners</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Make connections</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Create more activity</span>
+    </div>
+    <p style="font-size:15px;color:rgba(44,58,40,0.65);line-height:1.85;margin-bottom:36px;">Partners see the value, and fund more rewards and experiences — which brings people back to participate more.</p>
+
+    <div style="height:1px;width:64px;background:rgba(122,146,112,0.4);margin:0 auto 32px;"></div>
+
+    <p style="font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:#7A9270;margin-bottom:16px;">Then Empire Adds Another Layer</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;">
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Participants become creators</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Creators build things</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Enters the ecosystem</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">Ecosystem gets more useful</span>
+      <span style="align-self:center;color:rgba(44,58,40,0.35);">→</span>
+      <span style="padding:9px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">More people join</span>
+    </div>
+  </div>
+</div>
+
+<!-- THE MEAT TEST -->
+<div class="section-divider"></div>
+<div id="meat-test" style="background:#EDE7D8;padding:90px 32px;text-align:center;">
+  <div style="max-width:560px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:20px;">Every Decision We Make</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,4.4vw,40px);color:#2C3A28;margin-bottom:28px;">The MEAT <em style="font-style:italic;color:#7A9270;">Test.</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.6vw,23px);color:#2C3A28;line-height:1.6;margin-bottom:24px;">Does this help someone participate more in their life?</p>
+    <p style="font-size:15px;color:rgba(44,58,40,0.7);line-height:1.9;">If yes, it may belong. If it only increases screen time, data collection, or engagement without helping someone act, connect, create, or experience something in the real world — it probably doesn't. Every feature we build has to earn its place against that one question.</p>
+  </div>
+</div>
+
+<!-- FOUNDATIONAL STATEMENT -->
+<div class="section-divider"></div>
+<div id="foundational-statement" style="background:#2C3A28;padding:100px 32px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,3.4vw,32px);color:rgba(247,243,236,0.55);line-height:1.7;margin-bottom:20px;">MEAT is not trying to become the place where you spend your life.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(24px,3.8vw,36px);color:#7A9270;line-height:1.6;">MEAT is trying to become the platform that helps you participate in the life you already have — and build the parts you still want.</p>
   </div>
 </div>
 
@@ -3024,8 +3163,12 @@ function closeMobileNavAndGo(id){
       </div>
       <p style="font-size:17.9px;color:rgba(44,58,40,0.6);line-height:1.9;margin-bottom:20px;font-weight:300;">It was a day like any other. I had just come from a conversation with my mom and brother about my trajectory in life — the kind of conversation where you're expected to just accept things as they are. Walking out afterward, right across the street, I saw it: 30 Love, this big, beautiful, majestic bar and grill, closed, dark, a "for lease" sign in the window.</p>
       <p style="font-size:17.9px;color:rgba(44,58,40,0.55);line-height:1.9;font-weight:300;">That was the moment. I was done accepting what life was supposed to be. There had to be a way for operators, foodies, and chefs to build the next big hospitality idea together — before it ended up behind a "for lease" sign of its own. I called it MEAT. By that night, my entire life had changed.</p>
+
+      <p style="font-size:17.9px;color:rgba(44,58,40,0.55);line-height:1.9;font-weight:300;margin-top:20px;">But 30 Love was only the spark. MEAT is really made up of a few pieces. A piece of my dad — not with me now, but the one who taught me to be relentless, to just keep showing up even when I didn't feel like it. A piece of Stormi, my dog, who taught me the same thing a different way: build trust over fear, one step at a time. And a piece of me — wanting to connect with somebody on a real level, and on top of that, wanting to do it with somebody else. To feel like I'm not alone.</p>
+
+      <p style="font-size:17.9px;color:rgba(44,58,40,0.55);line-height:1.9;font-weight:300;margin-top:20px;">I think that's why this resonates past just restaurants. It's not really about the industry. It's about showing up anyway.</p>
       <div class="quote-block">
-        <p>"I never set out to fix the restaurant industry. I set out to make sure no chef ever closed without being heard first."</p>
+        <p>"I wanted to create a place where chefs and foodies and operators can submit their concepts and feel like they have something. I want to change the way ideas are brought to life."</p>
         <div class="quote-attr">— Holden Krivelin, Founder &amp; CEO · MEAT Hospitality Group</div>
       </div>
     </div>
