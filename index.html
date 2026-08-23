@@ -1701,6 +1701,7 @@ footer a:hover{opacity:1}
         <button onclick="document.getElementById('life-stage').scrollIntoView({behavior:'smooth'})">Grows With You</button>
         <button onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">MEAT App</button>
         <button onclick="document.getElementById('meaties-place').scrollIntoView({behavior:'smooth'})">Meaties Place</button>
+        <button onclick="document.getElementById('mudge').scrollIntoView({behavior:'smooth'})">Mudge</button>
       </div>
     </details>
 
@@ -1765,7 +1766,8 @@ function closeMobileNavAndGo(id){
 }
 
 // Prevent nav dropdowns from ever overlapping: closing all others whenever one opens,
-// and closing any open dropdown on an outside click.
+// closing any open dropdown on an outside click, and closing a dropdown when one of
+// its own links is clicked (since that click is navigating away from it).
 (function(){
   var navDrops = document.querySelectorAll('details.nav-drop');
   navDrops.forEach(function(drop){
@@ -1775,6 +1777,11 @@ function closeMobileNavAndGo(id){
           if(other !== drop) other.open = false;
         });
       }
+    });
+    drop.querySelectorAll('.nav-drop-menu button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        setTimeout(function(){ drop.open = false; }, 0);
+      });
     });
   });
   document.addEventListener('click', function(e){
@@ -3059,6 +3066,32 @@ function closeMobileNavAndGo(id){
 
     <p style="font-size:13.5px;color:rgba(44,58,40,0.55);text-align:center;margin-top:32px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.8;">Meaties Place should reward progress, not popularity. No follower counts, no status competition. Someone's first walk after months of doing nothing matters just as much as someone launching a company.</p>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,2vw,17px);color:#7A9270;text-align:center;margin-top:20px;">Meaties Place is where relevant people become visible through action.</p>
+  </div>
+</div>
+
+<!-- MUDGE -->
+<div id="mudge" style="background:#F7F3EC;padding:100px 32px;text-align:center;">
+  <div style="max-width:600px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;">Inside the App</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,4.4vw,40px);color:#2C3A28;margin-bottom:24px;">What is a <em style="font-style:italic;color:#7A9270;">Mudge?</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.2vw,20px);color:#2C3A28;line-height:1.6;margin-bottom:24px;">A little Mudge. A real move.</p>
+    <p style="font-size:15.5px;color:rgba(44,58,40,0.75);line-height:1.9;margin-bottom:20px;">Mudge — a MEAT nudge. A personalized prompt to help you take your next First Step, remember something important, discover something relevant, or reconnect with a goal.</p>
+    <p style="font-size:15.5px;color:rgba(44,58,40,0.75);line-height:1.9;margin-bottom:32px;">Phone off, on silent, out living your life — MEAT doesn't need you glued to a screen to matter. A Mudge only shows up if you've said you want it, and it only ever asks about your actual MEATs, today's or tomorrow's. "Good morning, Alyssa. Here's your Mudge for today." That's it. That's the whole thing.</p>
+
+    <div style="display:flex;flex-direction:column;gap:1px;background:var(--border-light);border:1px solid var(--border-light);max-width:480px;margin:0 auto;text-align:left;">
+      <div style="background:#EDE7D8;padding:20px 24px;">
+        <strong style="color:#2C3A28;font-size:14.5px;">Always opt-in.</strong>
+        <p style="color:rgba(44,58,40,0.6);font-size:13.5px;margin-top:4px;line-height:1.7;">No Mudge unless you've asked for one. Turn it off any time, no explanation needed.</p>
+      </div>
+      <div style="background:#EDE7D8;padding:20px 24px;">
+        <strong style="color:#2C3A28;font-size:14.5px;">Tied to what's real.</strong>
+        <p style="color:rgba(44,58,40,0.6);font-size:13.5px;margin-top:4px;line-height:1.7;">Never a generic push notification. Always about your actual MEATs for today or tomorrow.</p>
+      </div>
+      <div style="background:#EDE7D8;padding:20px 24px;">
+        <strong style="color:#2C3A28;font-size:14.5px;">Respects the quiet.</strong>
+        <p style="color:rgba(44,58,40,0.6);font-size:13.5px;margin-top:4px;line-height:1.7;">Phone off, asleep, out doing something that matters more — a Mudge waits for you, it doesn't chase you.</p>
+      </div>
+    </div>
   </div>
 </div>
 
