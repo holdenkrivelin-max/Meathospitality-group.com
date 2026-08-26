@@ -289,6 +289,12 @@ nav{
   font-family:'Jost',sans-serif;transition:color .15s,background .15s;
 }
 .nav-drop-menu button:hover{color:var(--gold);background:rgba(122,146,112,0.06);}
+.nav-drop-subhead{
+  padding:8px 22px 4px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(44,58,40,0.7);font-family:'Jost',sans-serif;font-weight:600;
+}
+.nav-drop-menu .nav-drop-subitem{padding-left:32px !important;}
+.nav-drop-divider{height:1px;background:rgba(44,58,40,0.1);margin:8px 16px;}
 .nav-new-here{
   font-size:11px;letter-spacing:.15em;text-transform:uppercase;
   color:var(--gold);border:1px solid rgba(122,146,112,0.5);
@@ -314,6 +320,13 @@ nav{
 .mobile-nav-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:250;background-color:#F7F3EC !important;padding:90px 32px 40px;overflow-y:auto;}
 .mobile-nav-panel.open{display:block !important;}
 .mobile-nav-panel .nav-link{display:block;width:100%;text-align:left;font-size:15.7px;padding:14px 0;border-bottom:1px solid rgba(44,58,40,0.12);color:#2C3A28 !important;}
+
+@media(max-width:700px){
+  #cookieBanner{padding:12px 16px !important;}
+  #cookieBanner p{font-size:12px !important;line-height:1.45 !important;min-width:0 !important;}
+  #cookieBanner > div{gap:10px !important;}
+  #cookieBanner button{padding:7px 14px !important;font-size:11.5px !important;}
+}
 .mobile-nav-close{position:fixed;top:16px;right:24px;z-index:260;background:none !important;border:none;font-size:31.4px;color:#2C3A28 !important;display:none;}
 
 @media(max-width:700px){
@@ -324,6 +337,7 @@ nav{
   .mobile-nav-close.open{display:block !important}
   .nav-cta-tagline{font-size:9.5px !important;white-space:normal !important;max-width:140px;line-height:1.3 !important;margin-top:4px !important;}
   .nav-cta-wrap{margin-left:8px !important;}
+  .mobile-nav-panel{padding-bottom:120px !important;}
 }
 
 /* ── BUTTONS ── */
@@ -1668,63 +1682,64 @@ footer a:hover{opacity:1}
     <span style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20.2px;letter-spacing:.22em;color:var(--char);">MEAT<span style="font-size:10.1px;letter-spacing:.3em;color:var(--gold);display:block;margin-top:2px;">Hospitality Group</span></span>
   </a>
   <div class="nav-links" style="align-items:center;">
-    <button class="nav-new-here" onclick="document.getElementById('founder').scrollIntoView({behavior:'smooth'})">New Here?</button>
+    <button class="nav-new-here" onclick="document.getElementById('start-here').scrollIntoView({behavior:'smooth'})">New Here?</button>
 
     <details class="nav-drop">
-      <summary>Attend</summary>
+      <summary>MEAT</summary>
       <div class="nav-drop-menu">
-        <button onclick="document.getElementById('dinner002').scrollIntoView({behavior:'smooth'})">Dinner 002</button>
-        <button onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})">Ways to Come</button>
-        <button onclick="document.getElementById('venues').scrollIntoView({behavior:'smooth'})">Venues</button>
+        <p class="nav-drop-subhead">Experiences</p>
+        <button class="nav-drop-subitem" onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})">MEAT Experiences</button>
+        <button class="nav-drop-subitem" onclick="document.getElementById('partners').scrollIntoView({behavior:'smooth'})">Partner Events</button>
+        <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">Chef Features</button>
+        <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">From the Ground Floor</button>
+        <div class="nav-drop-divider"></div>
+        <button onclick="document.getElementById('meat-circles').scrollIntoView({behavior:'smooth'})">MEAT Circles</button>
+        <button onclick="document.getElementById('meat-next').scrollIntoView({behavior:'smooth'})">MEAT Next</button>
+        <button onclick="document.getElementById('meat-moments').scrollIntoView({behavior:'smooth'})">MEAT Moments</button>
+        <button onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">MEAT App</button>
       </div>
     </details>
 
     <details class="nav-drop">
-      <summary>Explore</summary>
+      <summary>Discover</summary>
       <div class="nav-drop-menu">
-        <button onclick="document.getElementById('discover').scrollIntoView({behavior:'smooth'})">Discover</button>
-        <button onclick="document.getElementById('podcast').scrollIntoView({behavior:'smooth'})">Podcast</button>
-        <button onclick="document.getElementById('littlewins').scrollIntoView({behavior:'smooth'})">Little Wins</button>
-        <button onclick="document.getElementById('testimonials').scrollIntoView({behavior:'smooth'})">MEAT Testimonials</button>
-        <button onclick="document.getElementById('blueprint').scrollIntoView({behavior:'smooth'})">Blueprint</button>
-      </div>
-    </details>
-
-    <button class="nav-link" onclick="document.getElementById('merch').scrollIntoView({behavior:'smooth'})">Merch</button>
-    <button class="nav-link" onclick="document.getElementById('store').scrollIntoView({behavior:'smooth'})">Store</button>
-
-    <details class="nav-drop">
-      <summary>The App</summary>
-      <div class="nav-drop-menu">
-        <button onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">The Mission</button>
-        <button onclick="document.getElementById('business-model').scrollIntoView({behavior:'smooth'})">Business Model</button>
-        <button onclick="document.getElementById('trust-safety').scrollIntoView({behavior:'smooth'})">Trust &amp; Safety</button>
         <button onclick="document.getElementById('personalization').scrollIntoView({behavior:'smooth'})">Personalization</button>
         <button onclick="document.getElementById('life-stage').scrollIntoView({behavior:'smooth'})">Grows With You</button>
-        <button onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">MEAT App</button>
-        <button onclick="document.getElementById('meaties-place').scrollIntoView({behavior:'smooth'})">MEATspace</button>
-        <button onclick="document.getElementById('meat-circles').scrollIntoView({behavior:'smooth'})">MEAT Circles</button>
-        <button onclick="document.getElementById('meatings').scrollIntoView({behavior:'smooth'})">MEATings</button>
-        <button onclick="document.getElementById('meat-next').scrollIntoView({behavior:'smooth'})">MEAT Next</button>
-        <button onclick="document.getElementById('meat-count').scrollIntoView({behavior:'smooth'})">MEAT Count</button>
-        <button onclick="document.getElementById('life-companion').scrollIntoView({behavior:'smooth'})">Life Companion</button>
-        <button onclick="document.getElementById('meatchat').scrollIntoView({behavior:'smooth'})">MEATchat</button>
-        <button onclick="document.getElementById('meat-trends').scrollIntoView({behavior:'smooth'})">MEAT Trends</button>
+        <button onclick="document.getElementById('littlewins').scrollIntoView({behavior:'smooth'})">Little Wins</button>
+        <button onclick="document.getElementById('podcast').scrollIntoView({behavior:'smooth'})">Podcast</button>
       </div>
     </details>
 
     <details class="nav-drop">
       <summary>About</summary>
       <div class="nav-drop-menu">
+        <button onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">The Mission</button>
+        <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our Story</button>
         <button onclick="document.getElementById('philosophy').scrollIntoView({behavior:'smooth'})">Philosophy</button>
         <button onclick="document.getElementById('founder').scrollIntoView({behavior:'smooth'})">Founder</button>
-        <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our Story</button>
+        <button onclick="document.getElementById('trust-safety').scrollIntoView({behavior:'smooth'})">Trust &amp; Safety</button>
         <button onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">Roadmap</button>
       </div>
     </details>
 
-    <button class="nav-link" style="color:#7A9270 !important;font-weight:600;" onclick="document.getElementById('investors').scrollIntoView({behavior:'smooth'})">Partner With Us</button>
-    <button class="nav-link" onclick="document.getElementById('investor-overview').scrollIntoView({behavior:'smooth'})">Investors</button>
+    <details class="nav-drop">
+      <summary>Build With MEAT</summary>
+      <div class="nav-drop-menu">
+        <button onclick="document.getElementById('investors').scrollIntoView({behavior:'smooth'})">Partner With Us</button>
+        <button onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})">For Chefs</button>
+        <button onclick="document.getElementById('venues').scrollIntoView({behavior:'smooth'})">For Venues &amp; Creators</button>
+        <button onclick="document.getElementById('investor-overview').scrollIntoView({behavior:'smooth'})">Investors</button>
+        <button onclick="document.getElementById('business-model').scrollIntoView({behavior:'smooth'})">Business Model</button>
+      </div>
+    </details>
+
+    <details class="nav-drop">
+      <summary>Shop</summary>
+      <div class="nav-drop-menu">
+        <button onclick="document.getElementById('store').scrollIntoView({behavior:'smooth'})">Store</button>
+        <button onclick="document.getElementById('merch').scrollIntoView({behavior:'smooth'})">Merch</button>
+      </div>
+    </details>
   </div>
   <div class="nav-cta-wrap" style="display:flex;flex-direction:column;align-items:center;margin-left:32px;">
     <button class="nav-cta" style="background:#2C3A28 !important;color:#F7F3EC !important;border:none !important;" onclick="scrollToWaitlist()">Become a Meatie →</button>
@@ -1738,35 +1753,43 @@ footer a:hover{opacity:1}
 
 <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu" onclick="document.getElementById('mobileNavPanel').classList.remove('open');this.classList.remove('open');">×</button>
 <div class="mobile-nav-panel" id="mobileNavPanel">
-  <button class="nav-new-here" style="margin-bottom:8px;" onclick="closeMobileNavAndGo('founder')">New Here? Start Here →</button>
+  <button class="nav-new-here" style="margin-bottom:8px;" onclick="closeMobileNavAndGo('start-here')">New Here? Start Here →</button>
 
-  <p class="mobile-nav-section-label">Attend</p>
-  <button class="nav-link" onclick="closeMobileNavAndGo('dinner002')">Dinner 002</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('tiers')">Ways to Come</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('venues')">Venues</button>
-
-  <p class="mobile-nav-section-label">Explore</p>
-  <button class="nav-link" onclick="closeMobileNavAndGo('discover')">Discover</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('podcast')">Podcast</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('littlewins')">Little Wins</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('testimonials')">MEAT Testimonials</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('blueprint')">Blueprint</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('merch')">Merch</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('store')">Store</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('how-it-works')">The Mission</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('business-model')">Business Model</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('trust-safety')">Trust &amp; Safety</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('personalization')">Personalization</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('life-stage')">Grows With You</button>
+  <p class="mobile-nav-section-label">MEAT</p>
+  <p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(44,58,40,0.7);margin:8px 0 2px;">Experiences</p>
+  <button class="nav-link" style="padding-left:16px;" onclick="closeMobileNavAndGo('tiers')">MEAT Experiences</button>
+  <button class="nav-link" style="padding-left:16px;" onclick="closeMobileNavAndGo('partners')">Partner Events</button>
+  <button class="nav-link" style="padding-left:16px;" onclick="closeMobileNavAndGo('ground-floor')">Chef Features</button>
+  <button class="nav-link" style="padding-left:16px;" onclick="closeMobileNavAndGo('ground-floor')">From the Ground Floor</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('meat-circles')">MEAT Circles</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('meat-next')">MEAT Next</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('meat-moments')">MEAT Moments</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('platform')">MEAT App</button>
 
+  <p class="mobile-nav-section-label">Discover</p>
+  <button class="nav-link" onclick="closeMobileNavAndGo('personalization')">Personalization</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('life-stage')">Grows With You</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('littlewins')">Little Wins</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('podcast')">Podcast</button>
+
   <p class="mobile-nav-section-label">About</p>
+  <button class="nav-link" onclick="closeMobileNavAndGo('how-it-works')">The Mission</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('story')">Our Story</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('philosophy')">Philosophy</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('founder')">Founder</button>
-  <button class="nav-link" onclick="closeMobileNavAndGo('story')">Our Story</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('trust-safety')">Trust &amp; Safety</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('roadmap')">Roadmap</button>
+
+  <p class="mobile-nav-section-label">Build With MEAT</p>
   <button class="nav-link" style="color:#7A9270 !important;font-weight:600;" onclick="closeMobileNavAndGo('investors')">Partner With Us</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('tiers')">For Chefs</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('venues')">For Venues &amp; Creators</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('investor-overview')">Investors</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('business-model')">Business Model</button>
+
+  <p class="mobile-nav-section-label">Shop</p>
+  <button class="nav-link" onclick="closeMobileNavAndGo('store')">Store</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('merch')">Merch</button>
 </div>
 <script>
 function closeMobileNavAndGo(id){
@@ -1814,7 +1837,10 @@ function closeMobileNavAndGo(id){
   <h2 class="hero-headline">Come as you are.<br><em>Leave different.</em></h2>
   <p class="hero-body">Intimate dinners built around a chef's concept — what we call a Meatsperience — showcasing his or her passion through food and storytelling. No attitude. No dress code. Just great food and the right people.</p>
 
-  <div style="max-width:520px;margin:36px auto 0;padding:24px 28px;border:1px solid rgba(44,58,40,0.15);text-align:left;">
+  <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#3D5F35;margin-top:28px;">MEAT — Make Every Action Count</p>
+  <p style="font-size:12.5px;letter-spacing:.08em;color:rgba(44,58,40,0.75);margin-top:8px;">Connect · Plan · Move · Fuel · Grow · Make Impact</p>
+
+  <div style="max-width:520px;margin:28px auto 0;padding:24px 28px;border:1px solid rgba(44,58,40,0.15);text-align:left;">
     <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;text-align:center;">MEAT, in One Breath</p>
     <p style="font-size:14.5px;color:rgba(44,58,40,0.78);line-height:1.9;margin-bottom:6px;"><strong style="color:#2C3A28;">What we do now:</strong> host dinners that bring strangers together over real food and real stories.</p>
     <p style="font-size:14.5px;color:rgba(44,58,40,0.78);line-height:1.9;margin-bottom:6px;"><strong style="color:#2C3A28;">What we're building:</strong> an app that rewards you for actually showing up to your own life.</p>
@@ -1827,6 +1853,46 @@ function closeMobileNavAndGo(id){
   </div>
   <div class="scroll-hint" onclick="document.getElementById('everyone').scrollIntoView({behavior:'smooth'})">
     <span>Scroll</span><div class="scroll-line"></div>
+  </div>
+</div>
+
+<!-- NEW HERE? START HERE -->
+<div class="section-divider"></div>
+<div id="start-here" style="background:#F7F3EC;padding:100px 32px;">
+  <div style="max-width:680px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;text-align:center;">New Here?</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,4.8vw,46px);color:#2C3A28;margin-bottom:48px;text-align:center;line-height:1.2;">Start <em style="font-style:italic;color:#7A9270;">here.</em></h2>
+
+    <div style="margin-bottom:44px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#3D5F35;margin-bottom:10px;">01 · What is this?</p>
+      <p style="font-size:17px;color:rgba(44,58,40,0.8);line-height:1.85;">MEAT Hospitality Group creates real-world experiences — starting with intimate dinners built around a chef's concept in New York City and growing into partner events, chef features, and community gatherings. At the same time, we're building the MEAT app — a place that helps you turn intention into action, and connects you with people doing the same.</p>
+    </div>
+
+    <div style="margin-bottom:44px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#3D5F35;margin-bottom:10px;">02 · Oh, I get it.</p>
+      <p style="font-size:17px;color:rgba(44,58,40,0.8);line-height:1.85;">You set a real goal — a task, a habit, a bill, a plan. You take the step. MEAT tracks it, rewards it with MEAT Points, and remembers it as a MEAT Moment. Do it with someone if you want company, or do it alone — either way, it counts.</p>
+    </div>
+
+    <div style="margin-bottom:44px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#3D5F35;margin-bottom:10px;">03 · This is interesting.</p>
+      <p style="font-size:17px;color:rgba(44,58,40,0.8);line-height:1.85;margin-bottom:20px;">It doesn't stop at one feature. MEAT Circles help you find people moving in the same direction. MEAT Next tells you what to do when you're not sure. MEAT Moments builds a timeline of your whole life, big milestones and small ones alike. And From the Ground Floor lets you pre-order a seat at a restaurant before it even opens — so you can say you were there from the beginning.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="padding:8px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">MEAT Circles</span>
+        <span style="padding:8px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">MEAT Next</span>
+        <span style="padding:8px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">MEAT Moments</span>
+        <span style="padding:8px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">From the Ground Floor</span>
+        <span style="padding:8px 16px;border:1px solid rgba(44,58,40,0.2);font-size:12.5px;color:#2C3A28;">MEAT Rewards</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding-top:8px;">
+      <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#3D5F35;margin-bottom:14px;">04 · I want in.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(19px,2.6vw,23px);color:#2C3A28;margin-bottom:28px;">There's a seat at the table, and a door into the app. Take either one.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn-gold" onclick="scrollToWaitlist()">Join the Waitlist →</button>
+        <button class="btn-ghost" onclick="document.getElementById('founder').scrollIntoView({behavior:'smooth'})">Meet the Founder</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1900,9 +1966,9 @@ function closeMobileNavAndGo(id){
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">That's why we're building <strong style="color:#F7F3EC !important;font-weight:600;">Meat Points</strong> — earned not just by spending, but by living. Getting up and out of the house. Talking to someone new. Starting the thing you've been putting off. Asking the question you've been too nervous to ask. Every step forward earns you points, and points unlock access — a seat at a dinner, entry into new tiers, experiences that used to be reserved for whoever could already afford them. The reward for growing is more access to grow.</p>
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Every verified check-in earns <strong style="color:#F7F3EC !important;font-weight:600;">10 Meat Points</strong> — and if you complete it with a meatie, that jumps to <strong style="color:#F7F3EC !important;font-weight:600;">20</strong>. Show up for your life, and the points add up fast.</p>
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Just Keep Meating reminders send a quick nudge in the morning to get you excited for your tasks that day — "Good morning. Just Keep Meating — here are your reminders for today."</p>
-      <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Those points live inside <strong style="color:#F7F3EC !important;font-weight:600;">MEAT Rewards</strong> — and it's not just for MEAT events and dinners. Restaurants, cafes, bakeries, coffee shops, chef spotlights, unannounced concepts still in the works — even ground-floor preorder access to what's opening next. Why should you only get rewarded for doing one thing?</p>
-      <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Preorder one of those ground-floor experiences and you'll see who else is waiting alongside you — building the hype before the place even opens its doors.</p>
-      <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Gyms. Spas. Saunas. Day trips. The everyday things nobody else is rewarding you for. The bigger we grow, the more we'll add. Welcome to everyday living as it should be.</p>
+      <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Those points live inside <strong style="color:#F7F3EC !important;font-weight:600;">MEAT Rewards</strong> — and it's not just for MEAT events and dinners. Restaurants, cafes, bakeries, coffee shops — Partner Events, Chef Features, and Chef Profiles for concepts still finding their footing — even ground-floor pre-order access to what's opening next. Why should you only get rewarded for doing one thing?</p>
+      <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Pre-order from a Chef Profile and you'll see who else is waiting alongside you — building the hype before the place even opens its doors.</p>
+      <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Gyms. Spas. Saunas. Day trips. Partner Events at the businesses you already love. The everyday things nobody else is rewarding you for. The bigger we grow, the more we'll add. Welcome to everyday living as it should be.</p>
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">Here's how it works: do it on your own, or connect with a meatie who's doing something similar — complete the task, verify it happened, then move on to your next objective. No hollow self-checkboxes. Real steps, confirmed by real people.</p>
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">We want to reward you for what you do every day, with things you already do. Went grocery shopping? That's life. Met a friend for coffee? Life. Went on a date, walked the dog, tried a new restaurant, worked on your idea, finally sent the email you've been avoiding? All life.</p>
       <p style="font-size:clamp(15.5px,2vw,18.5px);color:rgba(247,243,236,0.8) !important;line-height:1.95;font-weight:300;max-width:640px;margin:0 auto 24px;">You don't necessarily have to do it alone. See what others are up to. Connect based on shared interest. Hold each other accountable. Complete the task together — or do it on your own. Verify each other's progress. Earn Meat Points. Keep moving. Either way, you earn points for taking that first step. We encourage you to go with how you feel and what you like — every activity is based on your interests. Someone should always be able to take the first step alone and still have it count — the connection is there for when you don't want to go it solo, not a requirement to earn access.</p>
@@ -1939,6 +2005,97 @@ function closeMobileNavAndGo(id){
       <p style="font-family:'Jost',sans-serif;font-weight:700;font-size:clamp(20px,2.8vw,26px);letter-spacing:.14em;text-transform:uppercase;color:#7A9270 !important;margin-top:40px;">Let's MEAT.</p>
       </details>
     </div>
+  </div>
+</div>
+
+<!-- FROM THE GROUND FLOOR -->
+<div class="section-divider"></div>
+<div id="ground-floor" style="background:#2C3A28;padding:100px 32px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;">Inside the App</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,4.4vw,40px);color:#F7F3EC;margin-bottom:24px;">From the <em style="font-style:italic;color:#7A9270;">Ground Floor.</em></h2>
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:24px;">People discover chefs and what they hope to open next — the vision, menu direction, proposed neighborhood, and what makes it different — then pre-order a future experience to help generate early support.</p>
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:12px;"><strong style="color:#F7F3EC;">For the guest:</strong> Discover what could exist before everyone else does.</p>
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:48px;"><strong style="color:#F7F3EC;">For the chef:</strong> Don't just tell people what you dream of opening. Find the people who want it — and let their pre-orders help you get there.</p>
+
+    <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#7A9270;margin-bottom:28px;">A First Look Inside</p>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:36px;">
+
+      <!-- PHONE: CHEF PROFILE -->
+      <div style="width:250px;background:#0d0d0d;border-radius:36px;padding:12px;box-shadow:0 20px 50px rgba(0,0,0,0.4);">
+        <div style="background:#F7F3EC;border-radius:26px;overflow:hidden;position:relative;height:490px;">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:18px;background:#0d0d0d;border-radius:10px;z-index:2;"></div>
+
+          <div style="height:150px;background:linear-gradient(135deg,#3D5F35 0%,#2C3A28 100%);position:relative;">
+            <div style="position:absolute;bottom:-26px;left:20px;width:52px;height:52px;border-radius:50%;background:#EDE7D8;border:3px solid #F7F3EC;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:#2C3A28;">M</div>
+          </div>
+
+          <div style="padding:34px 18px 14px;text-align:left;">
+            <p style="font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:#3D5F35;font-weight:700;margin-bottom:2px;">Chef Profile · Brooklyn</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:#2C3A28;margin-bottom:6px;">Chef Maya</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11.5px;color:#3D5F35;line-height:1.5;margin-bottom:12px;">"I want to open an intimate 30-seat Caribbean restaurant."</p>
+
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;">
+              <span style="font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:rgba(44,58,40,0.72);">Ground floor progress</span>
+              <span style="font-size:10px;color:#3D5F35;font-weight:700;">72%</span>
+            </div>
+            <div style="width:100%;height:5px;background:rgba(44,58,40,0.12);border-radius:3px;margin-bottom:14px;overflow:hidden;">
+              <div style="width:72%;height:100%;background:#7A9270;border-radius:3px;"></div>
+            </div>
+
+            <div style="background:white;border:1px solid rgba(44,58,40,0.12);border-radius:8px;padding:8px 10px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:9.5px;color:#2C3A28;">Opening Dinner Credit</span>
+              <span style="font-size:9.5px;color:#3D5F35;font-weight:700;">$50</span>
+            </div>
+            <div style="background:white;border:1px solid rgba(44,58,40,0.12);border-radius:8px;padding:8px 10px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:9.5px;color:#2C3A28;">Chef's Table Experience</span>
+              <span style="font-size:9.5px;color:#3D5F35;font-weight:700;">$100</span>
+            </div>
+            <div style="background:white;border:1px solid rgba(44,58,40,0.12);border-radius:8px;padding:8px 10px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:9.5px;color:#2C3A28;">Founding Guest Package</span>
+              <span style="font-size:9.5px;color:#3D5F35;font-weight:700;">$250</span>
+            </div>
+
+            <div style="background:#3D5F35;border-radius:8px;padding:10px;text-align:center;">
+              <span style="font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#F7F3EC;font-weight:700;">Pre-Order →</span>
+            </div>
+          </div>
+        </div>
+        <p style="color:rgba(247,243,236,0.68);font-size:11.5px;margin-top:16px;">Chef Maya's Ground Floor</p>
+      </div>
+
+      <!-- PHONE: FUTURE MEAT MOMENT -->
+      <div style="width:250px;background:#0d0d0d;border-radius:36px;padding:12px;box-shadow:0 20px 50px rgba(0,0,0,0.4);">
+        <div style="background:#F7F3EC;border-radius:26px;overflow:hidden;position:relative;height:490px;">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:18px;background:#0d0d0d;border-radius:10px;z-index:2;"></div>
+
+          <div style="padding:48px 20px 20px;text-align:left;">
+            <p style="font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#3D5F35;font-weight:700;margin-bottom:6px;">MEAT Moments · 2027</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:#2C3A28;margin-bottom:16px;">Opening Night</p>
+
+            <div style="height:140px;background:linear-gradient(135deg,#EAE4D4 0%,#EDE7D8 100%);border-radius:10px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(44,58,40,0.4);">Photo from the night</span>
+            </div>
+
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:#3D5F35;line-height:1.6;margin-bottom:10px;">"I supported this before the doors opened."</p>
+            <p style="font-size:10px;color:rgba(44,58,40,0.72);line-height:1.6;margin-bottom:16px;">Pre-ordered the Founding Guest Package eight months before opening night. Tonight, the doors finally opened.</p>
+
+            <div style="background:white;border:1px solid rgba(44,58,40,0.12);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:8px;">
+              <div style="width:14px;height:14px;background:#2C3A28;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#F7F3EC;font-size:9px;">✓</div>
+              <span style="font-size:9.5px;color:#7A9270;font-weight:700;">MEAT Count +25</span>
+            </div>
+          </div>
+        </div>
+        <p style="color:rgba(247,243,236,0.68);font-size:11.5px;margin-top:16px;">A Moment, Months Later</p>
+      </div>
+
+    </div>
+
+    <p style="font-size:13.5px;color:rgba(247,243,236,0.68);line-height:1.8;max-width:520px;margin:36px auto 0;">This is not an investment, and it does not carry ownership or equity in the restaurant. It's a pre-order for a future experience from the chef — with clear terms on fulfillment, refunds, timing, and what happens if the concept doesn't open.</p>
+
+    <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#7A9270;margin-top:36px;margin-bottom:16px;">The Chef's Journey</p>
+    <p style="font-size:13.5px;color:rgba(247,243,236,0.7);line-height:2;">Chef Profile → Concept → Community Interest → Pre-Orders → Funding Toward Launch → Opening → MEAT Experience → MEAT Moment</p>
   </div>
 </div>
 
@@ -2577,34 +2734,79 @@ function closeMobileNavAndGo(id){
   <div style="max-width:700px;margin:0 auto;">
     <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;text-align:center;">Before Anything Else</p>
     <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,4.6vw,44px);color:#2C3A28;margin-bottom:24px;text-align:center;">Trust &amp; Safety.</h2>
-    <p style="font-size:15.5px;color:rgba(44,58,40,0.7);line-height:1.9;text-align:center;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto;">The app doesn't exist yet — but the standard it's held to already does. These are the commitments the app is being built around from day one, not features bolted on after something goes wrong.</p>
+    <p style="font-size:15.5px;color:rgba(44,58,40,0.7);line-height:1.9;text-align:center;margin-bottom:16px;max-width:560px;margin-left:auto;margin-right:auto;">The app doesn't exist yet — but the standard it's held to already does. These are the commitments the app is being built around from day one, not features bolted on after something goes wrong.</p>
 
-    <div style="display:flex;flex-direction:column;gap:1px;background:var(--border-light);border:1px solid var(--border-light);">
+    <div style="max-width:560px;margin:0 auto 48px;padding:28px 32px;background:rgba(44,58,40,0.05);border:1px solid rgba(44,58,40,0.15);text-align:center;">
+      <p style="font-family:'Jost',sans-serif;font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#2C3A28;margin-bottom:10px;">You control your MEAT experience.</p>
+      <p style="font-size:14.5px;color:rgba(44,58,40,0.7);line-height:1.8;">Who you connect with, what you share, and when you participate are always your choice. MEAT is built for connection without pressure.</p>
+    </div>
+
+    <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#3D5F35;font-weight:600;margin-bottom:16px;">Who You Interact With</p>
+    <div style="display:flex;flex-direction:column;gap:1px;background:var(--border-light);border:1px solid var(--border-light);margin-bottom:40px;">
+      <div style="background:#F7F3EC;padding:22px 26px;">
+        <strong style="color:#2C3A28;font-size:15px;">You choose who can reach you.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Friends-only, Circle-only, mutual connection, or open discovery — your call, not a default buried in settings.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:22px 26px;">
+        <strong style="color:#2C3A28;font-size:15px;">No forced access.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Matching, joining the same Circle, or attending the same MEATUp never entitles anyone to your attention.</p>
+      </div>
       <div style="background:#F7F3EC;padding:22px 26px;">
         <strong style="color:#2C3A28;font-size:15px;">Verified before you can match.</strong>
         <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Phone verification is the floor for creating a profile — no anonymous accounts, no bots pretending to be people.</p>
       </div>
+    </div>
+
+    <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#3D5F35;font-weight:600;margin-bottom:16px;">What Control You Have</p>
+    <div style="display:flex;flex-direction:column;gap:1px;background:var(--border-light);border:1px solid var(--border-light);margin-bottom:40px;">
       <div style="background:#F7F3EC;padding:22px 26px;">
-        <strong style="color:#2C3A28;font-size:15px;">Public places, by default.</strong>
-        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">First-time meetups between people who don't know each other default to suggested public spots — never a private address.</p>
+        <strong style="color:#2C3A28;font-size:15px;">Profile privacy is your call.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Location precision, workplace, schedule, goals, financial progress, relationship status — control what's visible. MEAT should never make somebody expose personal information just to participate.</p>
       </div>
       <div style="background:#F7F3EC;padding:22px 26px;">
-        <strong style="color:#2C3A28;font-size:15px;">Block and report, one tap away.</strong>
-        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Reachable directly from any profile or conversation — never buried, never optional to find.</p>
-      </div>
-      <div style="background:#F7F3EC;padding:22px 26px;">
-        <strong style="color:#2C3A28;font-size:15px;">A real person reviewing reports.</strong>
-        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Every report gets looked at by a human, not a queue that quietly disappears. Safety concerns get a same-day response.</p>
+        <strong style="color:#2C3A28;font-size:15px;">Message requests, held separately.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Requests sit in their own inbox until you accept them. Repeated unwanted contact gets restricted quickly, not after the tenth message.</p>
       </div>
       <div style="background:#F7F3EC;padding:22px 26px;">
         <strong style="color:#2C3A28;font-size:15px;">Only what's needed, nothing more.</strong>
         <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">No workplace, no exact address, no background tracking. What we don't collect can't be a problem later.</p>
       </div>
       <div style="background:#F7F3EC;padding:22px 26px;">
+        <strong style="color:#2C3A28;font-size:15px;">Transparent, always.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">You'll know what MEAT knows about you, why it uses that information, and have simple controls to change or delete it.</p>
+      </div>
+    </div>
+
+    <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#3D5F35;font-weight:600;margin-bottom:16px;">When Something Feels Wrong</p>
+    <div style="display:flex;flex-direction:column;gap:1px;background:var(--border-light);border:1px solid var(--border-light);">
+      <div style="background:#F7F3EC;padding:22px 26px;">
+        <strong style="color:#2C3A28;font-size:15px;">Block and report, one tap away.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Reachable directly from any profile or conversation — obvious placement, no guilt, no confusing process.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:22px 26px;">
+        <strong style="color:#2C3A28;font-size:15px;">A real person reviewing reports.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Every report gets looked at by a human, not a queue that quietly disappears. Safety concerns get a same-day response.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:22px 26px;">
+        <strong style="color:#2C3A28;font-size:15px;">MEATUps built for safety, not just fun.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Clear host identity, location details, attendee expectations, and a simple code of conduct. First-time one-on-one meetups default to public places, with an easy way to share the details with someone you trust.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:22px 26px;">
+        <strong style="color:#2C3A28;font-size:15px;">Circles with real rules.</strong>
+        <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">Clear standards against harassment, sexual pressure, stalking, threats, degrading comments, and discrimination — enforced, not just posted somewhere.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:22px 26px;">
         <strong style="color:#2C3A28;font-size:15px;">A real bridge, not a replacement, for real help.</strong>
         <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:6px;line-height:1.75;">A meatie is a great accountability partner for a lot of things. For substance use, mental health, or recovery, MEAT will always point you toward real, trained support first — not a stranger from an app. SAMHSA's National Helpline (1-800-662-HELP) is free, confidential, and available 24/7.</p>
       </div>
     </div>
+
+    <div style="max-width:600px;margin:48px auto 0;padding:28px 32px;background:rgba(61,95,53,0.06);border:1px solid rgba(44,58,40,0.15);">
+      <strong style="color:#2C3A28;font-size:15px;">Built with women, not just for them.</strong>
+      <p style="color:rgba(44,58,40,0.65);font-size:14.5px;margin-top:8px;line-height:1.75;">Design for everyone means women are represented in the photography, examples, leadership, testing group, and actual product decisions — without the brand becoming patronizing. Before this ships, women test the rough product and get asked directly: where would you hesitate, what feels invasive, what would make you leave? Their behavior teaches us more than guessing ever could.</p>
+    </div>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(18px,2.4vw,22px);color:#3D5F35;text-align:center;margin-top:48px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.6;">Connection should never require surrendering your boundaries.</p>
 
     <p style="text-align:center;font-size:13.5px;color:rgba(44,58,40,0.45);font-style:italic;margin-top:32px;">This list will only get more specific as the app gets built — not less.</p>
   </div>
@@ -2766,7 +2968,7 @@ function closeMobileNavAndGo(id){
     <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">Matching never means automatic access to someone. MEAT can recommend meaties based on overlapping interests and goals, but each person chooses whether to connect, message, or accept an accountability request — comfortable and consensual, every time.</p>
     <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">We reward you with points for what you do every day — grocery shopping, coffee with a friend, walking the dog, working on an idea, sending the email you've been avoiding. You don't need to invent something extra. The life you're already living counts.</p>
     <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">Set the objective. Do it. Keep each other accountable. Verify the step. Earn MEAT Points for participating in your life. Those points can eventually help create access to MEAT experiences — giving participation real value. And then tomorrow? Take another step.</p>
-    <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">Every verified check-in earns <strong style="color:#F7F3EC !important;">10 MEAT Points</strong> — and if you complete it with a meatie, that jumps to <strong style="color:#F7F3EC !important;">20</strong>. Just Keep Meating reminders send a quick nudge in the morning to get you excited for your tasks that day. Those points live inside <strong style="color:#F7F3EC !important;">MEAT Rewards</strong>, and it's not just for MEAT events and dinners. Restaurants, cafes, bakeries, coffee shops, chef spotlights, unannounced concepts still in the works, gyms, spas, saunas, day trips — the everyday things nobody else is rewarding you for. Preorder a ground-floor experience and you'll see who else is waiting alongside you — building the hype before the doors even open. The bigger we grow, the more we'll add. Welcome to everyday living as it should be.</p>
+    <p style="font-size:17.9px;color:rgba(247,243,236,0.78) !important;line-height:2;font-weight:300;margin-bottom:24px;max-width:680px;margin-left:auto;margin-right:auto;">Every verified check-in earns <strong style="color:#F7F3EC !important;">10 MEAT Points</strong> — and if you complete it with a meatie, that jumps to <strong style="color:#F7F3EC !important;">20</strong>. Just Keep Meating reminders send a quick nudge in the morning to get you excited for your tasks that day. Those points live inside <strong style="color:#F7F3EC !important;">MEAT Rewards</strong>, and it's not just for MEAT events and dinners. Restaurants, cafes, bakeries, coffee shops, Partner Events, Chef Features and Chef Profiles for concepts still finding their footing, gyms, spas, saunas, day trips — the everyday things nobody else is rewarding you for. Pre-order from a Chef Profile and you'll see who else is waiting alongside you — building the hype before the doors even open. The bigger we grow, the more we'll add. Welcome to everyday living as it should be.</p>
 
     <div style="max-width:680px;margin:0 auto 24px;text-align:left;background:rgba(122,146,112,0.08);border-left:3px solid #7A9270;padding:32px 36px;">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.4vw,23px);color:#F7F3EC !important;line-height:1.6;margin-bottom:16px;">Checking in should feel as easy as scanning your phone to pay.</p>
@@ -3278,6 +3480,103 @@ function closeMobileNavAndGo(id){
   </div>
 </div>
 
+<!-- MEAT MOMENTS -->
+<div id="meat-moments" style="background:#2C3A28;padding:100px 32px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <p style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A9270;margin-bottom:14px;">Inside the App</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,4.4vw,40px);color:#F7F3EC;margin-bottom:24px;">MEAT <em style="font-style:italic;color:#7A9270;">Moments.</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.2vw,20px);color:#F7F3EC;line-height:1.6;margin-bottom:16px;">Capture the moments that count.</p>
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto;">From the everyday wins to the once-in-a-lifetime milestones, keep the people, places, and experiences that make your life yours.</p>
+
+    <!-- TIMELINE VISUAL -->
+    <div style="max-width:520px;margin:0 auto 40px;text-align:left;">
+      <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A9270;text-align:center;margin-bottom:24px;">A First Look Inside</p>
+      <div style="position:relative;padding-left:28px;">
+        <div style="position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:rgba(247,243,236,0.2);"></div>
+
+        <div style="position:relative;margin-bottom:22px;">
+          <div style="position:absolute;left:-28px;top:4px;width:9px;height:9px;border-radius:50%;background:#7A9270;"></div>
+          <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,236,0.6);margin-bottom:4px;">2026</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:#F7F3EC;">First MEAT Experience</p>
+        </div>
+
+        <div style="position:relative;margin-bottom:22px;">
+          <div style="position:absolute;left:-28px;top:4px;width:9px;height:9px;border-radius:50%;background:#7A9270;"></div>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:#F7F3EC;">First Trip Abroad</p>
+        </div>
+
+        <div style="position:relative;margin-bottom:22px;padding-left:0;">
+          <div style="position:absolute;left:-25px;top:6px;width:5px;height:5px;border-radius:50%;background:rgba(247,243,236,0.4);"></div>
+          <p style="font-size:13px;color:rgba(247,243,236,0.55);font-style:italic;">A quiet Sunday that turned into the best day of the month</p>
+        </div>
+
+        <div style="position:relative;margin-bottom:22px;">
+          <div style="position:absolute;left:-28px;top:4px;width:9px;height:9px;border-radius:50%;background:#7A9270;"></div>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:#F7F3EC;">Moving Day — New Apartment</p>
+        </div>
+
+        <div style="position:relative;margin-bottom:22px;">
+          <div style="position:absolute;left:-28px;top:4px;width:9px;height:9px;border-radius:50%;background:#7A9270;"></div>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:#F7F3EC;">Graduation</p>
+        </div>
+
+        <div style="position:relative;margin-bottom:22px;">
+          <div style="position:absolute;left:-25px;top:6px;width:5px;height:5px;border-radius:50%;background:rgba(247,243,236,0.4);"></div>
+          <p style="font-size:13px;color:rgba(247,243,236,0.55);font-style:italic;">Met these people</p>
+        </div>
+
+        <div style="position:relative;margin-bottom:22px;">
+          <div style="position:absolute;left:-28px;top:4px;width:9px;height:9px;border-radius:50%;background:#7A9270;"></div>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:#F7F3EC;">Wedding Day</p>
+        </div>
+
+        <div style="position:relative;">
+          <div style="position:absolute;left:-28px;top:4px;width:9px;height:9px;border-radius:50%;background:#7A9270;"></div>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:#F7F3EC;">Opening Night — Chef Maya's Restaurant</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#7A9270;margin-top:2px;">"I supported this before the doors opened."</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:12px;">Your first trip out of the country. Graduating. Moving in with your best friend. Starting a business. Meeting someone who changes your life. Getting engaged. Getting married. Becoming a parent. Running your first marathon. And everything exciting in between the milestones, too.</p>
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:32px;">Even the smaller nights and spontaneous experiences you never want to forget.</p>
+
+    <div style="max-width:480px;margin:0 auto 32px;padding:24px 26px;background:rgba(247,243,236,0.06);border:1px solid rgba(247,243,236,0.15);">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;color:#F7F3EC;line-height:1.9;">Do something → Capture the Moment → Share/connect → Track your growth → Discover what's Next → Do something again.</p>
+    </div>
+
+    <p style="font-size:15.5px;color:rgba(247,243,236,0.75);line-height:1.9;margin-bottom:32px;">It's a story that goes beyond finding events: discover → participate → support → experience → remember.</p>
+
+    <div style="max-width:480px;margin:0 auto 32px;padding:4px;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
+        <div style="flex:1;min-width:200px;text-align:left;padding:18px 20px;background:rgba(247,243,236,0.06);border:1px solid rgba(247,243,236,0.15);">
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:14px;color:#7A9270;margin-bottom:6px;">MEAT Next</p>
+          <p style="font-size:13.5px;color:rgba(247,243,236,0.7);line-height:1.6;font-style:italic;">What will you do next?</p>
+        </div>
+        <div style="flex:1;min-width:200px;text-align:left;padding:18px 20px;background:rgba(247,243,236,0.06);border:1px solid rgba(247,243,236,0.15);">
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:14px;color:#7A9270;margin-bottom:6px;">MEAT Moments</p>
+          <p style="font-size:13.5px;color:rgba(247,243,236,0.7);line-height:1.6;font-style:italic;">Remember what got you here.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1px;background:var(--border-light);border:1px solid var(--border-light);max-width:480px;margin:0 auto;text-align:left;">
+      <div style="background:rgba(247,243,236,0.06);padding:20px 24px;">
+        <strong style="color:#F7F3EC;font-size:14.5px;">A timeline, not a feed.</strong>
+        <p style="color:rgba(247,243,236,0.6);font-size:13.5px;margin-top:4px;line-height:1.7;">Your Moments build into a visual record of your own life — not something designed to be scrolled past.</p>
+      </div>
+      <div style="background:rgba(247,243,236,0.06);padding:20px 24px;">
+        <strong style="color:#F7F3EC;font-size:14.5px;">Feeds the rest of MEAT.</strong>
+        <p style="color:rgba(247,243,236,0.6);font-size:13.5px;margin-top:4px;line-height:1.7;">A Moment can connect back to MEAT Count, get shared with a Circle, or shape what MEAT Next suggests.</p>
+      </div>
+      <div style="background:rgba(247,243,236,0.06);padding:20px 24px;">
+        <strong style="color:#F7F3EC;font-size:14.5px;">Yours to capture, yours to keep.</strong>
+        <p style="color:rgba(247,243,236,0.6);font-size:13.5px;margin-top:4px;line-height:1.7;">A goal completed, a meal cooked, a person met — big or small, if it mattered to you, it belongs in your timeline.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- LIFE COMPANION -->
 <div id="life-companion" style="background:#2C3A28;padding:100px 32px;text-align:center;">
   <div style="max-width:640px;margin:0 auto;">
@@ -3361,6 +3660,47 @@ function closeMobileNavAndGo(id){
     </div>
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(17px,2.2vw,20px);color:#7A9270;">Trends should inspire participation, not comparison.</p>
+  </div>
+</div>
+
+<!-- THE STANDARD -->
+<div style="background:#F7F3EC;padding:100px 32px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <p class="section-label" style="justify-content:center;margin-bottom:24px;">The Standard</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,4.8vw,46px);color:#2C3A28;margin-bottom:16px;line-height:1.2;">As easy <em style="font-style:italic;color:#7A9270;">as MEATing.</em></h2>
+    <p style="font-size:15.5px;color:rgba(44,58,40,0.75);line-height:1.9;margin-top:24px;">The interface should feel almost obvious.</p>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(16px,2.2vw,19px);color:#2C3A28;margin-top:20px;line-height:1.6;">Open → see what matters → take action → check it off → see what's next.</p>
+
+    <p style="font-size:15.5px;color:rgba(44,58,40,0.75);line-height:1.9;margin-top:24px;">No maze of menus. No cluttered dashboards. No forcing people to learn twenty branded terms before they can use the app.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(44,58,40,0.15);border:1px solid rgba(44,58,40,0.15);margin-top:32px;text-align:left;">
+      <div style="background:#F7F3EC;padding:20px 22px;">
+        <p style="font-size:13.5px;color:rgba(44,58,40,0.75);line-height:1.7;">One clear home screen with today's priorities, MEAT Count, and MEAT Next.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:20px 22px;">
+        <p style="font-size:13.5px;color:rgba(44,58,40,0.75);line-height:1.7;">MEATings should come to you naturally instead of making you hunt for reminders.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:20px 22px;">
+        <p style="font-size:13.5px;color:rgba(44,58,40,0.75);line-height:1.7;">MEATspace, Circles, and MEATchat should be one or two taps away.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:20px 22px;">
+        <p style="font-size:13.5px;color:rgba(44,58,40,0.75);line-height:1.7;">Adding a task, goal, bill, or plan should take seconds.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:20px 22px;">
+        <p style="font-size:13.5px;color:rgba(44,58,40,0.75);line-height:1.7;">Progress should be visible instantly.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:20px 22px;">
+        <p style="font-size:13.5px;color:rgba(44,58,40,0.75);line-height:1.7;">Personalization should simplify the app, not add complexity.</p>
+      </div>
+    </div>
+
+    <div style="max-width:520px;margin:32px auto 0;padding:24px 28px;background:rgba(44,58,40,0.04);border:1px solid rgba(44,58,40,0.15);">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#2C3A28;line-height:1.7;">Could someone open MEAT for the first time and understand what to do without a tutorial?</p>
+      <p style="font-size:13px;color:rgba(44,58,40,0.6);margin-top:10px;">If yes, we're doing it right.</p>
+    </div>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(18px,2.4vw,22px);color:#3D5F35;margin-top:32px;">MEAT — life organization as easy as MEATing. 💚</p>
   </div>
 </div>
 
