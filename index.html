@@ -1731,6 +1731,7 @@ footer a:hover{opacity:1}
         <button class="nav-drop-subitem" onclick="document.getElementById('meat-expand').scrollIntoView({behavior:'smooth'})">MEAT Expand</button>
         <button class="nav-drop-subitem" onclick="document.getElementById('meat-list-content').scrollIntoView({behavior:'smooth'})">MEAT List™</button>
         <button class="nav-drop-subitem" onclick="document.getElementById('meat-media').scrollIntoView({behavior:'smooth'})">MEAT Media</button>
+        <button class="nav-drop-subitem" onclick="document.getElementById('meat-video').scrollIntoView({behavior:'smooth'})">MEAT Video</button>
         <button class="nav-drop-subitem" onclick="document.getElementById('meat-label').scrollIntoView({behavior:'smooth'})">MEAT Label</button>
         <button class="nav-drop-subitem" onclick="document.getElementById('red-label').scrollIntoView({behavior:'smooth'})">Red Label</button>
         <button class="nav-drop-subitem" onclick="document.getElementById('submit-meat-media-section').scrollIntoView({behavior:'smooth'})">Submit to MEAT Media</button>
@@ -1813,6 +1814,7 @@ footer a:hover{opacity:1}
   <button class="nav-link" onclick="closeMobileNavAndGo('meat-expand')">MEAT Expand</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('meat-list-content')">MEAT List™</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('meat-media')">MEAT Media</button>
+  <button class="nav-link" onclick="closeMobileNavAndGo('meat-video')">MEAT Video</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('meat-label')">MEAT Label</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('red-label')">Red Label</button>
   <button class="nav-link" onclick="closeMobileNavAndGo('submit-meat-media-section')">Submit to MEAT Media</button>
@@ -2388,7 +2390,7 @@ function closeMobileNavAndGo(id, beforeScroll){
     <div style="max-width:560px;margin:0 auto 48px;padding:28px 30px;background:#2C3A28;text-align:left;">
       <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin-bottom:12px;text-align:center;">MEAT Media Structure</p>
       <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:#F7F3EC;margin-bottom:14px;text-align:center;">MEAT Media</p>
-      <p style="font-size:14px;color:rgba(247,243,236,0.8);line-height:2;text-align:center;">→ MEAT Life<br/>→ <strong style="color:#F7F3EC;">MEAT Radio</strong><br/>→ <strong style="color:#F7F3EC;">MEAT Label</strong><br/>→ Films / Shows<br/>→ Interviews<br/>→ Community Stories<br/>→ Event Coverage</p>
+      <p style="font-size:14px;color:rgba(247,243,236,0.8);line-height:2;text-align:center;">→ MEAT Life<br/>→ <strong style="color:#F7F3EC;">MEAT Radio</strong><br/>→ <strong style="color:#F7F3EC;">MEAT Video</strong><br/>→ <strong style="color:#F7F3EC;">MEAT Label</strong><br/>→ Films / Shows<br/>→ Interviews<br/>→ Community Stories<br/>→ Event Coverage</p>
     </div>
 
     <!-- MEAT RADIO -->
@@ -2396,6 +2398,17 @@ function closeMobileNavAndGo(id, beforeScroll){
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:19px;color:#F7F3EC;line-height:1.6;margin-bottom:14px;">Sharing the stories of today and the Meaties of tomorrow.</p>
     <p style="font-size:14.5px;color:rgba(247,243,236,0.75);line-height:1.9;max-width:600px;margin:0 auto 20px;">A home for conversations, interviews, audio stories, live discussions, music and culture programming, founder stories, community submissions, and voices people may not know yet but should.</p>
     <p style="font-size:14px;color:rgba(247,243,236,0.72);line-height:1.85;max-width:600px;margin:0 auto 48px;">MEAT Radio can discover people before everyone else does — "Meaties of tomorrow" gives it a future-facing identity, not just another podcast.</p>
+
+    <!-- MEAT VIDEO -->
+    <p id="meat-video" style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;font-weight:600;margin-bottom:6px;">MEAT Video</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:19px;color:#F7F3EC;line-height:1.6;margin-bottom:14px;">Watch what matters to you. Discover what moves you next.</p>
+    <p style="font-size:14.5px;color:rgba(247,243,236,0.75);line-height:1.9;max-width:600px;margin:0 auto 20px;">The place inside the app where you watch and discover video — creator content, MEAT Life stories, community submissions, interviews, MEAT Moments, event footage, Red Label performances, tutorials, original shows, and eventually longer-form MEAT Media productions.</p>
+    <p style="font-size:14px;color:rgba(247,243,236,0.72);line-height:1.85;max-width:600px;margin:0 auto 32px;">Because MEAT is personalized, it's never just another endless feed. MEAT Video surfaces what fits your interests, goals, people, places, and what you're trying to do next.</p>
+
+    <div style="max-width:480px;margin:0 auto 48px;padding:24px 26px;background:rgba(232,198,107,0.06);border:1px solid rgba(44,58,40,0.15);">
+      <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#E8C66B;margin-bottom:10px;">Inside MEAT Video</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:16px;color:#F7F3EC;line-height:1.6;">MEAT Clips — short, quick, shareable videos, right inside MEAT Video.</p>
+    </div>
 
     <!-- MEAT LABEL -->
     <p id="meat-label" style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;font-weight:600;margin-bottom:6px;">MEAT Label</p>
@@ -2425,7 +2438,7 @@ function closeMobileNavAndGo(id, beforeScroll){
 
     <div style="max-width:560px;margin:0 auto 40px;padding:32px 34px;background:#2C3A28;">
       <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E8C66B;margin-bottom:16px;text-align:center;">The Creative Structure</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15.5px;color:#F7F3EC;line-height:2;text-align:center;">MEAT Label — creators and emerging talent.<br/>Red Label — musicians specifically.<br/>MEAT Media — distributes and tells the stories.<br/>MEAT Radio — gives voices and music another channel.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15.5px;color:#F7F3EC;line-height:2;text-align:center;">MEAT Label — creators and emerging talent.<br/>Red Label — musicians specifically.<br/>MEAT Media — distributes and tells the stories.<br/>MEAT Video — where you watch and discover it.<br/>MEAT Radio — gives voices and music another channel.</p>
       <p style="font-size:13px;color:rgba(247,243,236,0.65);line-height:1.8;margin-top:20px;text-align:center;">Someone gets discovered through MEAT Label, featured through MEAT Media, interviewed on MEAT Radio, and potentially grows into a larger role inside the ecosystem — the pieces feeding each other instead of existing separately.</p>
     </div>
 
@@ -4644,7 +4657,11 @@ function closeMobileNavAndGo(id, beforeScroll){
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:rgba(44,58,40,0.12);border:1px solid rgba(44,58,40,0.12);text-align:left;">
       <div style="background:#F7F3EC;padding:20px 22px;">
         <strong style="color:#2C3A28;font-size:14px;">MEAT Clips</strong>
-        <p style="color:rgba(44,58,40,0.72);font-size:13px;margin-top:4px;line-height:1.6;">See it. Clip it. Send it to your people.</p>
+        <p style="color:rgba(44,58,40,0.72);font-size:13px;margin-top:4px;line-height:1.6;">Short, shareable video moments — lives inside MEAT Video.</p>
+      </div>
+      <div style="background:#F7F3EC;padding:20px 22px;">
+        <strong style="color:#2C3A28;font-size:14px;">MEAT Video</strong>
+        <p style="color:rgba(44,58,40,0.72);font-size:13px;margin-top:4px;line-height:1.6;">Watch what matters to you. Discover what moves you next.</p>
       </div>
       <div style="background:#F7F3EC;padding:20px 22px;">
         <strong style="color:#2C3A28;font-size:14px;">MEAT Games</strong>
@@ -4720,7 +4737,7 @@ function closeMobileNavAndGo(id, beforeScroll){
 
     <p style="font-size:14px;color:rgba(247,243,236,0.7);line-height:1.9;margin-bottom:32px;">Because MEAT already knows what you're into, your feedback doesn't get lost in a generic inbox — it lands with the team actually building that part of MEAT.</p>
 
-    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(17px,2.2vw,20px);color:#E8C66B;">Submit your next MEAT expansion.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(17px,2.2vw,20px);color:#E8C66B;">Submit Your Next MEAT.</p>
   </div>
 </div>
 
