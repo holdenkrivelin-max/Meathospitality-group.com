@@ -273,11 +273,30 @@ body.light-mode .contact-box{filter:invert(1) hue-rotate(180deg);}
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
-  padding:16px 40px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:rgba(44,58,40,0.96);
+  padding:14px 20px 16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(44,58,40,0.97);
   border-bottom:1px solid var(--border-light);
+  gap:6px;
 }
+.nav-corner-brand{position:absolute;top:14px;left:20px;display:flex;align-items:center;opacity:.85;}
+.nav-corner-brand img{height:26px;width:26px;object-fit:contain;}
+.nav-utils{position:absolute;top:12px;right:16px;display:flex;align-items:center;gap:8px;}
+.nav-center{display:flex;flex-direction:column;align-items:center;gap:5px;}
+.nav-center-m{height:34px;width:34px;object-fit:contain;margin-bottom:2px;}
+.nav-center-name{
+  font-family:'Cormorant Garamond',serif;font-weight:400;font-size:19px;
+  letter-spacing:.2em;color:#F7F3EC;text-align:center;line-height:1.2;margin:0;
+}
+.nav-center-name span{font-size:9.5px;letter-spacing:.28em;color:var(--gold);display:block;margin-top:2px;}
+.nav-main-menu-btn{
+  margin-top:2px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(247,243,236,0.92);background:none;border:1px solid rgba(247,243,236,0.3);
+  padding:7px 20px;border-radius:20px;cursor:pointer;display:flex;align-items:center;gap:6px;
+  font-family:'Jost',sans-serif;font-weight:500;transition:border-color .2s,color .2s;
+}
+.nav-main-menu-btn:hover{border-color:var(--gold);color:var(--gold);}
+.nav-main-menu-btn:after{content:'';width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--gold);display:inline-block;margin-left:2px;}
 .nav-logo{
   font-family:'Cormorant Garamond',serif;font-weight:400;font-size:22.4px;
   letter-spacing:.22em;color:#F7F3EC;text-decoration:none;line-height:1;
@@ -335,9 +354,9 @@ nav{
 }
 .mobile-nav-panel .mobile-nav-section-label:first-of-type{margin-top:0;}
 .nav-cta{
-  padding:11px 24px;background:#E8C66B;color:#2C3A28;
-  font-family:'Jost',sans-serif;font-weight:600;font-size:12.3px;
-  letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;
+  margin-top:4px;padding:10px 24px;background:#E8C66B;color:#2C3A28;
+  font-family:'Jost',sans-serif;font-weight:600;font-size:12px;
+  letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;
   transition:background .2s,transform .15s;white-space:nowrap;
 }
 .nav-cta:hover{background:#F0D896;transform:translateY(-1px)}
@@ -353,32 +372,30 @@ nav{
   #cookieBanner p{font-size:12px !important;line-height:1.45 !important;min-width:0 !important;}
   #cookieBanner > div{gap:10px !important;}
   #cookieBanner button{padding:7px 14px !important;font-size:11.5px !important;}
-  .hero{min-height:auto !important;padding:100px 24px 60px !important;}
+  .hero{min-height:auto !important;padding:32px 24px 60px !important;}
   .scroll-hint{display:none !important;}
 }
 .mobile-nav-close{position:fixed;top:16px;right:24px;z-index:260;background:none !important;border:none;font-size:31.4px;color:#F7F3EC !important;display:none;}
 
 @media(max-width:700px){
   .nav-links{display:none}
-  .nav-cta{font-size:11.2px;padding:10px 16px}
-  .nav-burger{display:flex !important}
   .mobile-nav-panel.open{display:block !important}
   .mobile-nav-close.open{display:block !important}
-  .nav-cta-tagline{font-size:9.5px !important;white-space:normal !important;max-width:140px;line-height:1.3 !important;margin-top:4px !important;}
-  .nav-cta-wrap{margin-left:8px !important;}
   .mobile-nav-panel{padding-bottom:120px !important;}
-  nav{padding:12px 16px !important;}
-  .nav-logo img{height:32px !important;width:32px !important;}
-  .nav-logo span{font-size:15px !important;letter-spacing:.12em !important;}
-  .nav-logo span span{font-size:8px !important;letter-spacing:.18em !important;}
+  nav{padding:10px 16px 12px !important;}
+  .nav-corner-brand{top:12px !important;left:14px !important;}
+  .nav-corner-brand img{height:20px !important;width:20px !important;}
+  .nav-utils{top:10px !important;right:12px !important;gap:6px !important;}
+  .nav-center-m{height:28px !important;width:28px !important;}
+  .nav-center-name{font-size:16px !important;letter-spacing:.14em !important;}
+  .nav-center-name span{font-size:8px !important;letter-spacing:.2em !important;}
+  .nav-main-menu-btn{font-size:10px !important;padding:6px 16px !important;}
+  .nav-cta{font-size:10.5px !important;padding:9px 18px !important;}
 }
 @media(max-width:390px){
-  nav{padding:10px 12px !important;}
-  .nav-logo img{height:28px !important;width:28px !important;}
-  .nav-logo span{font-size:13px !important;letter-spacing:.08em !important;}
-  .nav-logo span span{display:none !important;}
-  .nav-cta-tagline{display:none !important;}
-  .nav-cta-wrap{margin-left:4px !important;}
+  nav{padding:8px 12px 10px !important;}
+  .nav-corner-brand{display:none !important;}
+  .nav-center-name span{display:none !important;}
 }
 
 /* ── BUTTONS ── */
@@ -408,7 +425,7 @@ nav{
 .hero{
   position:relative;min-height:100vh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:120px 32px 80px;
+  text-align:center;padding:48px 32px 80px;
   background:radial-gradient(ellipse at 50% 55%,rgba(44,58,40,0.08) 0%,transparent 62%),
              linear-gradient(180deg,#F7F3EC 0%,#EEE8DA 45%,#F0EAD8 100%);
   overflow:hidden;
@@ -1676,8 +1693,8 @@ footer a:hover{opacity:1}
   <div style="max-width:960px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;">
     <p style="font-size:14px;line-height:1.6;color:rgba(247,243,236,0.85);flex:1;min-width:240px;margin:0;">We use cookies to understand how visitors use this site and improve your experience. <a href="#privacy-policy" style="color:#E8C66B;text-decoration:underline;">Learn more</a></p>
     <div style="display:flex;gap:10px;flex-shrink:0;">
-      <button onclick="declineCookies()" style="background:none;border:1px solid rgba(247,243,236,0.35);color:#F7F3EC;padding:10px 20px;font-size:13px;letter-spacing:.05em;cursor:pointer;font-family:'Jost',sans-serif;">Decline</button>
-      <button onclick="acceptCookies()" style="background:#E8C66B;border:none;color:#F7F3EC;padding:10px 20px;font-size:13px;font-weight:600;letter-spacing:.05em;cursor:pointer;font-family:'Jost',sans-serif;">Accept</button>
+      <button onclick="declineCookies()" style="background:none;border:1.5px solid rgba(247,243,236,0.65);color:#F7F3EC;padding:10px 20px;font-size:13px;font-weight:600;letter-spacing:.05em;cursor:pointer;font-family:'Jost',sans-serif;">Decline</button>
+      <button onclick="acceptCookies()" style="background:#E8C66B;border:none;color:#2C3A28;padding:10px 20px;font-size:13px;font-weight:600;letter-spacing:.05em;cursor:pointer;font-family:'Jost',sans-serif;">Accept</button>
     </div>
   </div>
 </div>
@@ -1718,93 +1735,20 @@ footer a:hover{opacity:1}
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="https://meathospitalitygroup.com" target="_blank" style="display:flex;align-items:center;gap:10px;">
-    <img src="meat-logo-gold.png" alt="MEAT Hospitality Group — home" style="height:40px;width:40px;object-fit:contain;filter:none;"/>
-    <span style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20.2px;letter-spacing:.22em;color:#E8C66B;">MEAT<span style="font-size:10.1px;letter-spacing:.3em;color:var(--gold);display:block;margin-top:2px;">Hospitality Group</span></span>
+  <a class="nav-corner-brand" href="https://meathospitalitygroup.com" target="_blank" aria-label="MEAT Hospitality Group — home">
+    <img src="meat-logo-gold.png" alt="MEAT Hospitality Group"/>
   </a>
-  <div class="nav-links" style="align-items:center;">
-    <button class="nav-new-here" onclick="document.getElementById('start-here').scrollIntoView({behavior:'smooth'})">New Here?</button>
-
-    <details class="nav-drop">
-      <summary>MEAT</summary>
-      <div class="nav-drop-menu">
-        <p class="nav-drop-subhead">Experiences</p>
-        <button class="nav-drop-subitem" onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})">MEAT Experiences</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('partners').scrollIntoView({behavior:'smooth'})">Partner Events</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">Chef Features</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('ground-floor').scrollIntoView({behavior:'smooth'})">MEAT at the Ground Floor</button>
-        <div class="nav-drop-divider"></div>
-        <p class="nav-drop-subhead">Features</p>
-        <button class="nav-drop-subitem" onclick="document.getElementById('meat-circles').scrollIntoView({behavior:'smooth'})">MEAT Circles</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('meat-next').scrollIntoView({behavior:'smooth'})">MEAT Next</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('meat-moments').scrollIntoView({behavior:'smooth'})">MEAT Moments</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">MEAT App</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('how-meat-works-details').open=true;document.getElementById('app-preview').scrollIntoView({behavior:'smooth'})">App Preview</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('full-ecosystem').scrollIntoView({behavior:'smooth'})">Full Ecosystem</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('meat-expand').scrollIntoView({behavior:'smooth'})">MEAT Expand</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('meat-list-content').scrollIntoView({behavior:'smooth'})">MEAT List™</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('meat-media').scrollIntoView({behavior:'smooth'})">MEAT Media</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('meat-video').scrollIntoView({behavior:'smooth'})">MEAT Video</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('meat-label').scrollIntoView({behavior:'smooth'})">MEAT Label</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('red-label').scrollIntoView({behavior:'smooth'})">Red Label</button>
-        <button class="nav-drop-subitem" onclick="document.getElementById('submit-meat-media-section').scrollIntoView({behavior:'smooth'})">Submit to MEAT Media</button>
-      </div>
-    </details>
-
-    <details class="nav-drop">
-      <summary>Discover</summary>
-      <div class="nav-drop-menu">
-        <button onclick="document.getElementById('personalization').scrollIntoView({behavior:'smooth'})">Personalization</button>
-        <button onclick="document.getElementById('life-stage').scrollIntoView({behavior:'smooth'})">Grows With You</button>
-        <button onclick="document.getElementById('littlewins').scrollIntoView({behavior:'smooth'})">Little Wins</button>
-        <button onclick="document.getElementById('podcast').scrollIntoView({behavior:'smooth'})">Podcast</button>
-      </div>
-    </details>
-
-    <details class="nav-drop">
-      <summary>About</summary>
-      <div class="nav-drop-menu">
-        <button onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">The Mission</button>
-        <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our Story</button>
-        <button onclick="document.getElementById('philosophy').scrollIntoView({behavior:'smooth'})">Philosophy</button>
-        <button onclick="document.getElementById('meat-ecosystem-pillars').scrollIntoView({behavior:'smooth'})">The Seven Pillars</button>
-        <button onclick="document.getElementById('meat-manifesto').scrollIntoView({behavior:'smooth'})">The MEAT Manifesto</button>
-        <button onclick="document.getElementById('brand-philosophy').scrollIntoView({behavior:'smooth'})">Brand Philosophy</button>
-        <button onclick="document.getElementById('future-of-meating').scrollIntoView({behavior:'smooth'})">The Future of MEATing</button>
-        <button onclick="document.getElementById('founder').scrollIntoView({behavior:'smooth'})">Founder</button>
-        <button onclick="document.getElementById('trust-safety').scrollIntoView({behavior:'smooth'})">Trust &amp; Safety</button>
-        <button onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">Roadmap</button>
-      </div>
-    </details>
-
-    <details class="nav-drop">
-      <summary>Build With MEAT</summary>
-      <div class="nav-drop-menu">
-        <button onclick="document.getElementById('investors').scrollIntoView({behavior:'smooth'})">Partner With Us</button>
-        <button onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})">For Chefs</button>
-        <button onclick="document.getElementById('venues').scrollIntoView({behavior:'smooth'})">For Venues &amp; Creators</button>
-        <button onclick="document.getElementById('investor-overview').scrollIntoView({behavior:'smooth'})">Investors</button>
-        <button onclick="document.getElementById('business-model').scrollIntoView({behavior:'smooth'})">Business Model</button>
-      </div>
-    </details>
-
-    <details class="nav-drop">
-      <summary>Shop</summary>
-      <div class="nav-drop-menu">
-        <button onclick="document.getElementById('store').scrollIntoView({behavior:'smooth'})">Store</button>
-        <button onclick="document.getElementById('merch').scrollIntoView({behavior:'smooth'})">Merch</button>
-      </div>
-    </details>
+  <div class="nav-utils">
+    <button id="a11yToggle" onclick="toggleLargeText()" aria-label="Toggle larger text" title="Larger text" style="background:transparent;border:1px solid rgba(247,243,236,0.3);color:#F7F3EC;width:30px;height:30px;border-radius:50%;font-family:'Jost',sans-serif;font-weight:600;font-size:12px;cursor:pointer;flex-shrink:0;">Aa</button>
+    <button id="modeBtn" onclick="toggleLightMode()" aria-label="Toggle light mode" title="Switch theme" style="background:transparent;border:1px solid rgba(247,243,236,0.3);color:#F7F3EC;padding:6px 10px;border-radius:4px;font-family:'Jost',sans-serif;font-weight:600;font-size:12px;cursor:pointer;flex-shrink:0;white-space:nowrap;">☀️<span class="mode-label"> Light</span></button>
   </div>
-  <div class="nav-cta-wrap" style="display:flex;flex-direction:column;align-items:center;margin-left:32px;">
+
+  <div class="nav-center">
+    <img class="nav-center-m" src="meat-logo-gold.png" alt="MEAT"/>
+    <p class="nav-center-name">MEAT<span>Hospitality Group</span></p>
+    <button class="nav-main-menu-btn" aria-label="Open menu" onclick="document.getElementById('mobileNavPanel').classList.add('open');document.getElementById('mobileNavClose').classList.add('open');">Menu</button>
     <button class="nav-cta" style="background:#E8C66B !important;color:#2C3A28 !important;border:none !important;" onclick="scrollToWaitlist()">Become a Meatie →</button>
-    <p class="nav-cta-tagline" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11.5px;color:#E8C66B;margin-top:6px;white-space:nowrap;">Your life. Your goals. Your next step.</p>
   </div>
-  <button id="a11yToggle" onclick="toggleLargeText()" aria-label="Toggle larger text" title="Larger text" style="background:transparent;border:1px solid rgba(44,58,40,0.35);color:#F7F3EC;width:34px;height:34px;border-radius:50%;font-family:'Jost',sans-serif;font-weight:600;font-size:13px;cursor:pointer;margin-left:10px;flex-shrink:0;">Aa</button>
-  <button id="modeBtn" onclick="toggleLightMode()" aria-label="Toggle light mode" title="Switch theme" style="background:transparent;border:1px solid rgba(44,58,40,0.35);color:#F7F3EC;padding:8px 12px;border-radius:4px;font-family:'Jost',sans-serif;font-weight:600;font-size:13px;cursor:pointer;margin-left:10px;flex-shrink:0;white-space:nowrap;">☀️<span class="mode-label"> Light</span></button>
-  <button class="nav-burger" aria-label="Open menu" onclick="document.getElementById('mobileNavPanel').classList.add('open');document.getElementById('mobileNavClose').classList.add('open');">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
 <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu" onclick="document.getElementById('mobileNavPanel').classList.remove('open');this.classList.remove('open');">×</button>
@@ -1870,38 +1814,22 @@ function closeMobileNavAndGo(id, beforeScroll){
   if(el){ setTimeout(function(){ el.scrollIntoView({behavior:'smooth'}); }, 50); }
 }
 
-// Prevent nav dropdowns from ever overlapping: closing all others whenever one opens,
-// closing any open dropdown on an outside click, and closing a dropdown when one of
-// its own links is clicked (since that click is navigating away from it).
+// Keep page content clear of the fixed centered nav regardless of its
+// rendered height (which can vary slightly by font, zoom, or viewport).
 (function(){
-  var navDrops = document.querySelectorAll('details.nav-drop');
-  navDrops.forEach(function(drop){
-    drop.addEventListener('toggle', function(){
-      if(drop.open){
-        navDrops.forEach(function(other){
-          if(other !== drop) other.open = false;
-        });
-      }
-    });
-    drop.querySelectorAll('.nav-drop-menu button').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        setTimeout(function(){ drop.open = false; }, 0);
-      });
-    });
-  });
-  document.addEventListener('click', function(e){
-    navDrops.forEach(function(drop){
-      if(drop.open && !drop.contains(e.target)) drop.open = false;
-    });
-  });
+  function syncNavHeight(){
+    var nav = document.querySelector('nav');
+    if(!nav) return;
+    document.body.style.paddingTop = nav.offsetHeight + 'px';
+  }
+  syncNavHeight();
+  window.addEventListener('resize', syncNavHeight);
+  window.addEventListener('load', syncNavHeight);
 })();
 </script>
 
 <!-- HERO -->
 <div class="hero" id="main-content">
-  <div style="margin-bottom:32px;">
-    <img src="meat-logo-gold.png" alt="" style="height:90px;width:90px;object-fit:contain;filter:none;opacity:0.92;"/>
-  </div>
   <p class="hero-eyebrow">New York City · Est. 2026</p>
   <h1 class="hero-wordmark">MEAT</h1>
   <div class="hero-sub">Hospitality Group</div>
@@ -2118,7 +2046,7 @@ function closeMobileNavAndGo(id, beforeScroll){
 
     <p style="font-size:15.5px;color:rgba(44,58,40,0.75);line-height:1.9;margin-bottom:36px;">Tell us what you care about, where you're headed, and what you want to accomplish. MEAT helps surface the people, places, opportunities, actions, rewards, and experiences that actually fit you.</p>
 
-    <div style="max-width:420px;margin:0 auto 36px;text-align:left;">
+    <div style="max-width:420px;margin:0 auto 36px;text-align:center;">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.4vw,21px);color:#2C3A28;line-height:1.9;">Less searching.<br>Less switching.<br>Less figuring it out alone.</p>
       <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(18px,2.4vw,21px);color:#7A5F0F;line-height:1.9;margin-top:14px;">More doing.<br>More living.<br>More forward.</p>
     </div>
