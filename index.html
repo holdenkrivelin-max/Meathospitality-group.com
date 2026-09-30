@@ -1616,6 +1616,7 @@ footer a:hover{opacity:1}
 
   <div class="nav-center">
     
+    <a class="nav-cta" href="https://join.meathospitalitygroup.com/" target="_blank" rel="noopener" style="text-decoration:none;">Get Early Access</a>
     <label class="nav-main-menu-btn" id="menuButton" for="mobileMenuToggle" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobileNavPanel">Menu</label>
   </div>
 </nav>
@@ -1704,6 +1705,7 @@ document.addEventListener('keydown', function(event){
   <p class="hero-body">Organize your day and make room for everyday responsibilities, personal goals, and time with people you care about.</p>
   <div class="hero-ctas">
     <button class="btn-gold" onclick="scrollToWaitlist()">Get Early Access to MEAT Life ↓</button>
+    <a class="btn-gold" href="https://join.meathospitalitygroup.com/" target="_blank" rel="noopener">Get Early Access ↗</a>
   </div>
   <div class="scroll-hint" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">
     <span>Scroll</span><div class="scroll-line"></div>
@@ -1782,7 +1784,7 @@ if (__whyMeatLogoSrc) { document.getElementById('whyMeatMonogramImg').src = __wh
   <div style="max-width:640px;margin:0 auto;">
     <p style="font-size:12.3px;font-weight:400;letter-spacing:.4em;text-transform:uppercase;color:#63d7ff !important;margin-bottom:28px;">The Short Version</p>
     <p style="font-size:clamp(17px,2.3vw,21px);color:rgba(242,247,255,0.9) !important;line-height:1.9;font-weight:300;margin-bottom:28px;">MEAT Life is a personal app built to help you move forward — one meaningful next step at a time.</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(19px,2.6vw,23px);color:#63d7ff !important;line-height:1.6;">Come as you are. Keep moving forward.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:clamp(19px,2.6vw,23px);color:#63d7ff !important;line-height:1.6;">Built around what matters to you.</p>
   </div>
 </div>
 
@@ -1836,7 +1838,7 @@ if (__whyMeatLogoSrc) { document.getElementById('whyMeatMonogramImg').src = __wh
           <option value="other">Just Curious</option>
         </select>
         <button class="form-submit" id="submitBtn" onclick="handleSubmit()">Get Early Access</button>
-        <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:13.5px;color:#63d7ff;text-align:center;margin-top:12px;">Come as you are. Keep moving forward.</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:13.5px;color:#63d7ff;text-align:center;margin-top:12px;">Your MEAT Life starts with you.</p>
         <p class="form-note">No spam. We reach out personally. Everyone is welcome.</p>
       </div>
       <div class="success-msg" id="successMsg">
@@ -1932,6 +1934,7 @@ if (__whyMeatLogoSrc) { document.getElementById('whyMeatMonogramImg').src = __wh
     &nbsp;·&nbsp;
     <a href="mailto:holdenkrivelin@meatapp.tech">holdenkrivelin@meatapp.tech</a>
   </p>
+  <p style="margin-top:18px;"><a class="nav-cta" href="https://join.meathospitalitygroup.com/" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;opacity:1;">Get Early Access</a></p>
   <p style="margin-top:14px;font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:15px;color:#63d7ff;">Make time for what matters to you.</p>
   <p style="margin-top:16px;font-size:11px;letter-spacing:.05em;">
     <a href="#privacy-policy" style="color:rgba(242,247,255,0.82);text-decoration:underline;">Privacy Policy</a>
@@ -2027,7 +2030,7 @@ document.addEventListener('keydown', function(e) {
 </script>
 <script>document.addEventListener('DOMContentLoaded',()=>{const picker=document.querySelector('.meat-theme-picker'),nav=document.querySelector('.nav-utils');if(picker&&nav)nav.appendChild(picker);});</script>
 <script id="meat-app-polish-script">
-document.addEventListener('DOMContentLoaded',()=>{const body=document.body,hero=document.querySelector('.hero'),nav=document.querySelector('.nav-utils'),footer=document.querySelector('footer'),hour=new Date().getHours();const greeting=hour<12?'Good morning':hour<17?'Good afternoon':'Good evening';if(hero&&!hero.querySelector('.meat-welcome')){const welcome=document.createElement('div');welcome.className='meat-welcome';welcome.innerHTML='<span class="meat-welcome-dot"></span><span>'+greeting+'. Your next step starts here.</span>';hero.insertBefore(welcome,hero.firstElementChild)}if(nav&&!document.querySelector('.meat-motion-toggle')){const motion=document.createElement('button');motion.type='button';motion.className='meat-motion-toggle';motion.setAttribute('aria-label','Toggle reduced motion');motion.title='Reduce motion';motion.innerHTML='◌<span class="meat-control-label"> Motion</span>';const reduced=localStorage.getItem('meat-reduced-motion')==='true'||matchMedia('(prefers-reduced-motion: reduce)').matches;body.classList.toggle('meat-reduced-motion',reduced);motion.setAttribute('aria-pressed',String(reduced));motion.addEventListener('click',()=>{const next=!body.classList.contains('meat-reduced-motion');body.classList.toggle('meat-reduced-motion',next);localStorage.setItem('meat-reduced-motion',String(next));motion.setAttribute('aria-pressed',String(next))});nav.appendChild(motion)}if(nav&&!document.getElementById('a11yToggle')){const text=document.createElement('button');text.type='button';text.className='meat-text-toggle';text.textContent='Aa';text.setAttribute('aria-label','Toggle larger text');text.addEventListener('click',()=>{const next=!body.classList.contains('meat-large-text');body.classList.toggle('meat-large-text',next);localStorage.setItem('meat-large-text',String(next));text.setAttribute('aria-pressed',String(next))});const large=localStorage.getItem('meat-large-text')==='true';body.classList.toggle('meat-large-text',large);text.setAttribute('aria-pressed',String(large));nav.appendChild(text)}if(footer&&!footer.querySelector('.meat-signoff')){const signoff=document.createElement('p');signoff.className='meat-signoff';signoff.textContent='Come as you are. Keep moving forward.';footer.appendChild(signoff)}const targets=[...document.querySelectorAll('.section,.how-card,.tier-card,.discover-stat,.episode-card,.policy-card,.roadmap-item,.eco-item,.blueprint-item')];if(!body.classList.contains('meat-reduced-motion')&&'IntersectionObserver'in window){body.classList.add('meat-motion-ready');targets.forEach(el=>el.classList.add('meat-reveal'));const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('meat-visible');observer.unobserve(entry.target)}}),{threshold:.08});targets.forEach(el=>observer.observe(el))}else targets.forEach(el=>el.classList.add('meat-visible'))});
+document.addEventListener('DOMContentLoaded',()=>{const body=document.body,hero=document.querySelector('.hero'),nav=document.querySelector('.nav-utils'),footer=document.querySelector('footer'),hour=new Date().getHours();const greeting=hour<12?'Good morning':hour<17?'Good afternoon':'Good evening';if(hero&&!hero.querySelector('.meat-welcome')){const welcome=document.createElement('div');welcome.className='meat-welcome';welcome.innerHTML='<span class="meat-welcome-dot"></span><span>'+greeting+'. Your next step starts here.</span>';hero.insertBefore(welcome,hero.firstElementChild)}if(nav&&!document.querySelector('.meat-motion-toggle')){const motion=document.createElement('button');motion.type='button';motion.className='meat-motion-toggle';motion.setAttribute('aria-label','Toggle reduced motion');motion.title='Reduce motion';motion.innerHTML='◌<span class="meat-control-label"> Motion</span>';const reduced=localStorage.getItem('meat-reduced-motion')==='true'||matchMedia('(prefers-reduced-motion: reduce)').matches;body.classList.toggle('meat-reduced-motion',reduced);motion.setAttribute('aria-pressed',String(reduced));motion.addEventListener('click',()=>{const next=!body.classList.contains('meat-reduced-motion');body.classList.toggle('meat-reduced-motion',next);localStorage.setItem('meat-reduced-motion',String(next));motion.setAttribute('aria-pressed',String(next))});nav.appendChild(motion)}if(nav&&!document.getElementById('a11yToggle')){const text=document.createElement('button');text.type='button';text.className='meat-text-toggle';text.textContent='Aa';text.setAttribute('aria-label','Toggle larger text');text.addEventListener('click',()=>{const next=!body.classList.contains('meat-large-text');body.classList.toggle('meat-large-text',next);localStorage.setItem('meat-large-text',String(next));text.setAttribute('aria-pressed',String(next))});const large=localStorage.getItem('meat-large-text')==='true';body.classList.toggle('meat-large-text',large);text.setAttribute('aria-pressed',String(large));nav.appendChild(text)}if(footer&&!footer.querySelector('.meat-signoff')){const signoff=document.createElement('p');signoff.className='meat-signoff';signoff.textContent='Your life. Your choices.';footer.appendChild(signoff)}const targets=[...document.querySelectorAll('.section,.how-card,.tier-card,.discover-stat,.episode-card,.policy-card,.roadmap-item,.eco-item,.blueprint-item')];if(!body.classList.contains('meat-reduced-motion')&&'IntersectionObserver'in window){body.classList.add('meat-motion-ready');targets.forEach(el=>el.classList.add('meat-reveal'));const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('meat-visible');observer.unobserve(entry.target)}}),{threshold:.08});targets.forEach(el=>observer.observe(el))}else targets.forEach(el=>el.classList.add('meat-visible'))});
 document.addEventListener('DOMContentLoaded',()=>{document.body.classList.remove('light-mode');localStorage.removeItem('mainsite-theme')});
 </script>
 <script id="meat-site-audit-fixes">
