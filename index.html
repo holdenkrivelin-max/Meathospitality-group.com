@@ -1600,6 +1600,26 @@ footer a:hover{opacity:1}
 <style id="launch-promo-styles">
 .event-promo{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px clamp(24px,5vw,80px);background:var(--app-surface,#edf4ff);color:var(--app-ink,#12234b);border-bottom:1px solid var(--app-border,#b9c8e4);font-family:Jost,sans-serif}.event-promo p{margin:0;font-size:16px;line-height:1.6}.event-promo a{flex-shrink:0;border-radius:999px;background:var(--app-accent,#61d5f6);color:var(--app-accent-text,#12234b);padding:12px 22px;font-weight:700;text-decoration:none}.event-promo a:focus-visible{outline:3px solid currentColor;outline-offset:4px}@media(max-width:640px){.event-promo{flex-direction:column;align-items:flex-start;gap:12px}}
 </style>
+<style id="intent-teaser-style">
+  .intent-teaser{scroll-margin-top:180px;background:#10234d;color:#f2f7ff;text-align:center;padding:clamp(80px,12vw,150px) 24px;border-top:1px solid rgba(99,215,255,.35);border-bottom:1px solid rgba(99,215,255,.35)}
+  .intent-teaser__inner{max-width:780px;margin-inline:auto}
+  .intent-teaser__kicker,.intent-teaser__yours,.intent-teaser__coming,.intent-teaser__foot{font-family:'Jost',sans-serif;text-transform:uppercase}
+  .intent-teaser__kicker{font-size:13px;letter-spacing:.28em;color:#63d7ff;margin:0 0 42px}
+  .intent-teaser__title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(76px,14vw,150px);font-weight:600;letter-spacing:.06em;line-height:1;margin:0 0 24px;color:#f2f7ff}
+  .intent-teaser__tagline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(25px,4vw,36px);font-style:italic;line-height:1.2;margin:0 0 18px;color:#f2f7ff}
+  .intent-teaser__yours{font-size:15px;letter-spacing:.22em;color:#63d7ff;margin:0 0 50px}
+  .intent-teaser__divider{display:block;width:120px;height:1px;background:#63d7ff;margin:0 auto 50px}
+  .intent-teaser__coming{font-size:14px;letter-spacing:.26em;color:#dceaff;margin:0}
+  .intent-teaser__foot{font-size:12px;letter-spacing:.19em;color:#b4c9e9;margin:64px 0 0}
+  @media(max-width:600px){.intent-teaser__kicker{letter-spacing:.16em}.intent-teaser__title{letter-spacing:.02em}.intent-teaser__coming{letter-spacing:.16em}.intent-teaser__foot{letter-spacing:.1em}}
+</style>
+<style id="footer-readability-fix">
+body footer{background:#edf5ff!important;color:#10234d!important;border-top:1px solid #b9cde6!important}
+body footer p,body footer h2,body footer span{color:#10234d!important;opacity:1!important}
+body footer a,body footer .footer-links a{color:#163e78!important;opacity:1!important;text-decoration:underline;text-underline-offset:3px}
+body footer a:hover,body footer a:focus-visible{color:#005b87!important}
+body footer a:focus-visible{outline:2px solid #005b87;outline-offset:5px}
+</style>
 </head>
 <body>
 
@@ -1829,6 +1849,18 @@ if (__heroLogoSrc) { document.getElementById('heroMonogramImg').src = __heroLogo
     <p class="section-label">A calmer way forward</p>
     <h2 id="os-title">Powered by MEAT OS</h2>
     <p>The engine behind MEAT Life. It takes everything on your mind and organizes it into what to do, when to do it, and who to do it with.</p>
+  </div>
+</section>
+
+<section id="intent" class="intent-teaser" aria-labelledby="intent-teaser-title">
+  <div class="intent-teaser__inner">
+    <p class="intent-teaser__kicker">Meat Hospitality Group presents</p>
+    <h2 id="intent-teaser-title" class="intent-teaser__title">INTENT</h2>
+    <p class="intent-teaser__tagline">Your accountability partner.</p>
+    <p class="intent-teaser__yours">Completely yours</p>
+    <span class="intent-teaser__divider" aria-hidden="true"></span>
+    <p class="intent-teaser__coming">Something big is coming</p>
+    <p class="intent-teaser__foot">This has never felt more yours</p>
   </div>
 </section>
 
