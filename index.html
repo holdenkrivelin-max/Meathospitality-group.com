@@ -1749,6 +1749,18 @@ body.light-mode,body.light-mode img,body.light-mode video{filter:none!important}
 #meat-site .hero::after{background:radial-gradient(circle,var(--read-glow),transparent 68%)!important}
 #meat-site .site-menu{background:var(--read-bg)!important;border-color:var(--read-border)!important}
 </style>
+<style id="agency-home-banner-style">
+.agency-home-banner{background:#090807;color:#f7e7bb;padding:clamp(42px,7vw,86px) 24px;text-align:center;border-top:1px solid #8b6a32;border-bottom:1px solid #8b6a32}
+.agency-home-banner__inner{max-width:1000px;margin:0 auto}
+.agency-home-banner h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(42px,7vw,84px);font-weight:500;line-height:1.08;letter-spacing:-.02em;margin:0 0 14px;color:#f1d38a}
+.agency-home-banner p{font-family:'Jost',Arial,sans-serif;font-size:clamp(13px,2vw,17px);letter-spacing:.15em;text-transform:uppercase;margin:0 0 30px;color:#e7c877}
+.agency-home-banner a{display:inline-block;background:linear-gradient(135deg,#f8e5ae,#bd9047);border:1px solid #f5da92;border-radius:999px;color:#18120a!important;font-family:'Jost',Arial,sans-serif;font-size:16px;font-weight:700;letter-spacing:.05em;text-decoration:none;padding:14px 35px;transition:transform .2s,box-shadow .2s}
+.agency-home-banner a:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(225,184,94,.3)}
+.agency-home-banner a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.agency-home-banner a.agency-home-banner__details{background:transparent;color:#f1d38a!important;border-color:#a78850;margin-left:12px}
+.agency-home-banner a.agency-home-banner__details:hover{background:#251d12}
+@media(max-width:540px){.agency-home-banner a.agency-home-banner__details{margin:12px 0 0}}
+</style>
 </head>
 <body id="meat-site">
 
@@ -1828,6 +1840,7 @@ body.light-mode,body.light-mode img,body.light-mode video{filter:none!important}
       <div class="site-menu-links" aria-label="Site navigation">
         <a class="nav-link" href="#main-content">Home</a>
         <a class="nav-link" href="/intent">Intent</a>
+        <a class="nav-link" href="https://muse.ai/s/agency-clothing-xxxx5xqgxoxkx0xmxi5" target="_blank" rel="noopener noreferrer">Shop Agency</a>
         <a class="nav-link" href="#how-it-works">How it works</a>
         <a class="nav-link" href="https://meatintentionally.com">MEAT with intent</a>
         <a class="nav-link" href="https://meatwithintent.com">Our philosophy</a>
@@ -1893,6 +1906,15 @@ body.light-mode,body.light-mode img,body.light-mode video{filter:none!important}
   <p class="hero-body">MEAT Life helps you control what you do, when you do it, and who you do it with. Name what matters, see your next steps, and choose — without the hustle.</p>
   <div class="hero-ctas"><a class="btn-gold" href="#waitlist">Get early access</a></div>
   <p class="hero-meat-definition">What's a MEAT? Anything you plan to do — a task, a reminder, dinner with someone you love. Your day is built from MEATs.</p>
+</section>
+
+<section class="agency-home-banner" aria-labelledby="agency-home-title">
+  <div class="agency-home-banner__inner">
+    <h2 id="agency-home-title">Agency is loud.</h2>
+    <p>— by Meat Hospitality Group</p>
+    <a href="https://muse.ai/s/agency-clothing-xxxx5xqgxoxkx0xmxi5" target="_blank" rel="noopener noreferrer" aria-label="Shop Agency clothing (opens in a new tab)">Shop</a>
+    <a class="agency-home-banner__details" href="/agency-clothing.html">View the first piece</a>
+  </div>
 </section>
 
 <section id="manifesto" class="meat-manifesto" aria-labelledby="manifesto-title">
@@ -2105,7 +2127,7 @@ if (__heroLogoSrc) { document.getElementById('heroMonogramImg').src = __heroLogo
     <a href="https://meatwithintent.com">Our philosophy</a>
     <a href="https://meatverse.co">MEATVerse</a>
     <a href="https://meatempire.net">MEAT Empire</a>
-    <span>Shop (coming soon)</span>
+    <a href="https://muse.ai/s/agency-clothing-xxxx5xqgxoxkx0xmxi5" target="_blank" rel="noopener noreferrer">Shop Agency</a>
   </div>
   <p>MEAT Hospitality Group LLC · New York, NY</p>
   <p id="contact" tabindex="-1" style="margin-top:12px;">
