@@ -38,6 +38,28 @@
       }
     }
 
+    /* Pop art theme (toggle) */
+    #loudhaus-pop { position: fixed; opacity: 0; pointer-events: none; }
+    body:has(#loudhaus-pop:checked) {
+      --bg: #140a1a;
+      --bg-deep: #0d0612;
+      --surface: #221428;
+      --gold: #FF2D95;
+      --gold-bright: #FFD500;
+      --ink: #fff5fb;
+      --muted: #e0b8d4;
+      --line: rgba(255, 45, 149, .38);
+    }
+    .pop-toggle {
+      position: fixed; top: 14px; right: 14px; z-index: 9999;
+      width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+      background: linear-gradient(135deg,#FF2D95 0%,#FFD500 55%,#00CFFF 100%);
+      border: 2px solid rgba(255,255,255,.65);
+      box-shadow: 0 2px 12px rgba(0,0,0,.45);
+      transition: transform .18s ease;
+    }
+    .pop-toggle:hover { transform: scale(1.1); }
+    body:has(#loudhaus-pop:checked) .pop-toggle { box-shadow: 0 0 0 3px #140a1a, 0 0 0 5px #FF2D95; }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -221,6 +243,8 @@
   </style>
 </head>
 <body>
+  <input type="checkbox" id="loudhaus-pop" aria-label="Pop art theme">
+  <label class="pop-toggle" for="loudhaus-pop" title="Pop art theme" aria-label="Toggle pop art theme"></label>
   <main>
     <section class="hero" aria-labelledby="brand-name">
       <div class="hero-inner">

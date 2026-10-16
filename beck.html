@@ -94,9 +94,40 @@
     color: #5a5148;
   }
   .foot-line { font-style: italic; font-size: 15px; color: #8a7a64; letter-spacing: 1px; margin-top: 16px; }
+
+  /* Pop art theme (toggle) */
+  #beck-pop { position: fixed; opacity: 0; pointer-events: none; }
+  body:has(#beck-pop:checked) { background: #140a1a; color: #fff5fb; }
+  body:has(#beck-pop:checked) .kicker,
+  body:has(#beck-pop:checked) .yours,
+  body:has(#beck-pop:checked) .label,
+  body:has(#beck-pop:checked) .do-num,
+  body:has(#beck-pop:checked) p.body em,
+  body:has(#beck-pop:checked) .story-box .punch { color: #FF2D95; }
+  body:has(#beck-pop:checked) .divider { background: #FF2D95; }
+  body:has(#beck-pop:checked) .do-num { border-color: #FF2D95; }
+  body:has(#beck-pop:checked) .story-box { background: #221428; border-color: rgba(255,45,149,.38); }
+  body:has(#beck-pop:checked) h1,
+  body:has(#beck-pop:checked) h2.sec,
+  body:has(#beck-pop:checked) .do-item h3 { color: #FFD500; }
+  body:has(#beck-pop:checked) p.body,
+  body:has(#beck-pop:checked) .story-box p,
+  body:has(#beck-pop:checked) .do-item p { color: #f3e2f0; }
+  .pop-toggle {
+    position: fixed; top: 14px; right: 14px; z-index: 9999;
+    width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+    background: linear-gradient(135deg,#FF2D95 0%,#FFD500 55%,#00CFFF 100%);
+    border: 2px solid rgba(255,255,255,.65);
+    box-shadow: 0 2px 12px rgba(0,0,0,.45);
+    transition: transform .18s ease;
+  }
+  .pop-toggle:hover { transform: scale(1.1); }
+  body:has(#beck-pop:checked) .pop-toggle { box-shadow: 0 0 0 3px #140a1a, 0 0 0 5px #FF2D95; }
 </style>
 </head>
 <body>
+  <input type="checkbox" id="beck-pop" aria-label="Pop art theme">
+  <label class="pop-toggle" for="beck-pop" title="Pop art theme" aria-label="Toggle pop art theme"></label>
 
   <!-- HERO -->
   <section class="hero">

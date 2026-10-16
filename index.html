@@ -1496,11 +1496,12 @@ footer a:hover{opacity:1}
   .mhg-theme-label{font:600 10px 'Jost',sans-serif;letter-spacing:.08em;color:var(--app-ink)}
   .mhg-theme-choice{display:block;width:22px;height:22px;border:2px solid rgba(87,34,17,.35);border-radius:50%;cursor:pointer;box-shadow:0 0 0 0 transparent;transition:transform .18s ease,box-shadow .18s ease}
   .mhg-theme-choice:active{transform:scale(.88)}
-  #mhg-theme-electric:checked~nav label[for="mhg-theme-electric"],#mhg-theme-violet:checked~nav label[for="mhg-theme-violet"],#mhg-theme-forest:checked~nav label[for="mhg-theme-forest"],#mhg-theme-night:checked~nav label[for="mhg-theme-night"]{box-shadow:0 0 0 3px var(--app-surface);transform:scale(1.08)}
+  #mhg-theme-electric:checked~nav label[for="mhg-theme-electric"],#mhg-theme-violet:checked~nav label[for="mhg-theme-violet"],#mhg-theme-forest:checked~nav label[for="mhg-theme-forest"],#mhg-theme-night:checked~nav label[for="mhg-theme-night"],#mhg-theme-pop:checked~nav label[for="mhg-theme-pop"]{box-shadow:0 0 0 3px var(--app-surface);transform:scale(1.08)}
   body:has(#mhg-theme-electric:checked){--app-bg:#f2f7ff;--app-surface:#ffffff;--app-ink:#10234d;--app-muted:#4e6385;--app-hero:#1038b8;--app-hero-glow:#137be8;--app-accent:#63d7ff;--app-violet:#2454df;--app-border:rgba(24,75,164,.22);--app-accent-text:#1455b5}
   body:has(#mhg-theme-violet:checked){--app-bg:#f4f8ff;--app-surface:#ffffff;--app-ink:#122b55;--app-muted:#52688c;--app-hero:#143e92;--app-hero-glow:#247ded;--app-accent:#6bdaff;--app-violet:#287bea;--app-border:rgba(18,43,85,.18);--app-accent-text:#1455b5}
   body:has(#mhg-theme-forest:checked){--app-bg:#effaff;--app-surface:#ffffff;--app-ink:#103355;--app-muted:#496d86;--app-hero:#07559d;--app-hero-glow:#1399d5;--app-accent:#68e0ff;--app-violet:#2679de;--app-border:rgba(16,51,85,.18);--app-accent-text:#1455b5}
   body:has(#mhg-theme-night:checked){--app-bg:#071326;--app-surface:#101f39;--app-ink:#f2f7ff;--app-muted:#c3d5f0;--app-hero:#102a68;--app-hero-glow:#1555b5;--app-accent:#63d7ff;--app-violet:#79b7ff;--app-border:rgba(242,247,255,.18);--app-accent-text:#63d7ff}
+  body:has(#mhg-theme-pop:checked){--app-bg:#140a1a;--app-surface:#221428;--app-ink:#ffffff;--app-muted:#e0b8d4;--app-hero:#FF2D95;--app-hero-glow:#FFD500;--app-accent:#00CFFF;--app-violet:#FF2D95;--app-border:rgba(255,45,149,.28);--app-accent-text:#FF2D95}
   @media(max-width:700px){.mhg-theme-label{display:none}.mhg-theme-choice{width:19px;height:19px}.mhg-theme-native{gap:4px}}
 </style>
 <style id="meat-electric-brand">
@@ -1716,6 +1717,7 @@ body.light-mode,body.light-mode img,body.light-mode video{filter:none!important}
 #meat-site:has(#mhg-theme-violet:checked){--read-bg:#08152e;--read-surface:#142a51;--read-text:#f4f8ff;--read-muted:#c3d5f0;--read-accent:#9bc4ff;--read-border:#688dca;--read-glow:rgba(94,146,255,.16);}
 #meat-site:has(#mhg-theme-forest:checked){--read-bg:#061d29;--read-surface:#10323f;--read-text:#f2fbff;--read-muted:#c4dce5;--read-accent:#74e2e7;--read-border:#488d9c;--read-glow:rgba(52,202,222,.14);}
 #meat-site:has(#mhg-theme-night:checked){--read-bg:#070c17;--read-surface:#141d2e;--read-text:#f4f8ff;--read-muted:#ccd7e8;--read-accent:#bccff5;--read-border:#6c809f;--read-glow:rgba(151,183,242,.1);}
+#meat-site:has(#mhg-theme-pop:checked){--read-bg:#140a1a;--read-surface:#221428;--read-text:#fff5fb;--read-muted:#e0b8d4;--read-accent:#FF2D95;--read-border:#8a3a68;--read-glow:rgba(255,45,149,.14);}
 
 #meat-site{background:var(--read-bg)!important;color:var(--read-text)!important;background-image:radial-gradient(ellipse at 70% 0%,var(--read-glow),transparent 55%)!important}
 #meat-site :is(main,section,#why-meat,#privacy-policy,#terms,#cookieBanner,.waitlist-section,.waitlist-inner,.hero,.welcome-band,.welcome-inner,.section-wrap,.how-grid,.how-works,.pieces-brand,.os-section,.policy-wrap,.policy-inner,.contact-wrap,.contact-inner,.signup-section,.story-band,.story-inner,.short-version-band,.eco-band,.blueprint-band,.podcast-band,.little-wins-band,.merch-band,.merch-inner,.phil-inner,.discover-band,.discover-inner,.tiers-wrap,.tiers-grid,.roadmap-band,.roadmap-inner,.collab-wrap,.everyone-band,.everyone-inner,.footer-inner,.meat-manifesto){background-color:var(--read-bg)!important;background-image:linear-gradient(145deg,var(--read-glow),transparent 55%)!important;color:var(--read-text)!important}
@@ -1741,6 +1743,8 @@ body.light-mode,body.light-mode img,body.light-mode video{filter:none!important}
 #meat-site:has(#mhg-theme-forest:focus-visible) label[for="mhg-theme-forest"]{outline:3px solid var(--read-accent);outline-offset:5px}
 #meat-site:has(#mhg-theme-night:checked) label[for="mhg-theme-night"]{box-shadow:0 0 0 2px var(--read-bg),0 0 0 4px var(--read-accent);transform:scale(1.08)}
 #meat-site:has(#mhg-theme-night:focus-visible) label[for="mhg-theme-night"]{outline:3px solid var(--read-accent);outline-offset:5px}
+#meat-site:has(#mhg-theme-pop:checked) label[for="mhg-theme-pop"]{box-shadow:0 0 0 2px var(--read-bg),0 0 0 4px var(--read-accent);transform:scale(1.08)}
+#meat-site:has(#mhg-theme-pop:focus-visible) label[for="mhg-theme-pop"]{outline:3px solid var(--read-accent);outline-offset:5px}
 
 #meat-site #why-meat p[style*="serif"],#meat-site #why-meat p:first-child,#meat-site #privacy-policy>div>p:first-child,#meat-site #terms>div>p:first-child{color:var(--read-accent)!important}
 #meat-site :is(.hero-hospitality-sub,.hero-meat-definition,.pieces-brand__eyebrow,.meat-manifesto__accent,.meat-manifesto__close,.meat-control-label,.how-step,.mode-label){color:var(--read-accent)!important}
@@ -1769,6 +1773,7 @@ body.light-mode,body.light-mode img,body.light-mode video{filter:none!important}
 <input class="mhg-theme-input" type="radio" name="mhg-native-theme" id="mhg-theme-violet" aria-label="Azure theme">
 <input class="mhg-theme-input" type="radio" name="mhg-native-theme" id="mhg-theme-forest" aria-label="Ocean theme">
 <input class="mhg-theme-input" type="radio" name="mhg-native-theme" id="mhg-theme-night" aria-label="Night theme">
+<input class="mhg-theme-input" type="radio" name="mhg-native-theme" id="mhg-theme-pop" aria-label="Pop art theme">
 
 <a href="#main-content" style="position:absolute;left:-9999px;top:0;background:var(--read-bg);color:#f2f7ff;padding:14px 24px;z-index:9999;font-family:'Jost',sans-serif;font-size:14px;text-decoration:none;" onfocus="this.style.left='16px';this.style.top='16px';" onblur="this.style.left='-9999px';">Skip to main content</a>
 
@@ -1829,6 +1834,7 @@ body.light-mode,body.light-mode img,body.light-mode video{filter:none!important}
       <label class="mhg-theme-choice" for="mhg-theme-violet" title="Azure" aria-label="Azure theme" style="background:#287bea"></label>
       <label class="mhg-theme-choice" for="mhg-theme-forest" title="Ocean" aria-label="Ocean theme" style="background:#07559d"></label>
       <label class="mhg-theme-choice" for="mhg-theme-night" title="Night" aria-label="Night theme" style="background:#071326"></label>
+      <label class="mhg-theme-choice" for="mhg-theme-pop" title="Pop" aria-label="Pop art theme" style="background:linear-gradient(135deg,#FF2D95 0%,#FFD500 55%,#00CFFF 100%)"></label>
     </div>
     <button id="a11yToggle" onclick="toggleLargeText()" aria-label="Toggle larger text" title="Larger text" style="background:transparent;border:1px solid rgba(242,247,255,0.3);color:#f2f7ff;width:30px;height:30px;border-radius:50%;font-family:'Jost',sans-serif;font-weight:600;font-size:12px;cursor:pointer;flex-shrink:0;">Aa</button>
     <button id="modeBtn" onclick="toggleLightMode()" aria-label="Toggle light mode" title="Switch theme" style="background:transparent;border:1px solid rgba(242,247,255,0.3);color:#f2f7ff;padding:6px 10px;border-radius:4px;font-family:'Jost',sans-serif;font-weight:600;font-size:12px;cursor:pointer;flex-shrink:0;white-space:nowrap;">☀️<span class="mode-label"> Light</span></button>
