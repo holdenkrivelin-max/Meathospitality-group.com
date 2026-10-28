@@ -1,5 +1,23 @@
 # Legacy domain → MHG Group relaunch at mhgapps.com
-https://meathospitalitygroup.com/*      https://mhgapps.com/:splat  301!
-http://meathospitalitygroup.com/*       https://mhgapps.com/:splat  301!
-https://www.meathospitalitygroup.com/*  https://mhgapps.com/:splat  301!
-http://www.meathospitalitygroup.com/*   https://mhgapps.com/:splat  301!
+# Specific old-domain paths, placed before the wildcard so they apply to the old host only.
+# The mhgapps.com versions of these paths are unchanged, and the old-domain root is unchanged.
+https://meathospitalitygroup.com/beck https://muse.ai/s/meat-life-xdc5x0cxidxoxykxn/7unA7qWiHPa9C-2PD6xDfXFqtGET49MCWxIvt513_MQ 301!
+http://meathospitalitygroup.com/beck https://muse.ai/s/meat-life-xdc5x0cxidxoxykxn/7unA7qWiHPa9C-2PD6xDfXFqtGET49MCWxIvt513_MQ 301!
+https://www.meathospitalitygroup.com/beck https://muse.ai/s/meat-life-xdc5x0cxidxoxykxn/7unA7qWiHPa9C-2PD6xDfXFqtGET49MCWxIvt513_MQ 301!
+http://www.meathospitalitygroup.com/beck https://muse.ai/s/meat-life-xdc5x0cxidxoxykxn/7unA7qWiHPa9C-2PD6xDfXFqtGET49MCWxIvt513_MQ 301!
+https://meathospitalitygroup.com/agency https://mhgapps.com/family 301!
+http://meathospitalitygroup.com/agency https://mhgapps.com/family 301!
+https://www.meathospitalitygroup.com/agency https://mhgapps.com/family 301!
+http://www.meathospitalitygroup.com/agency https://mhgapps.com/family 301!
+https://meathospitalitygroup.com/house-of-intention https://mhgapps.com/family 301!
+http://meathospitalitygroup.com/house-of-intention https://mhgapps.com/family 301!
+https://www.meathospitalitygroup.com/house-of-intention https://mhgapps.com/family 301!
+http://www.meathospitalitygroup.com/house-of-intention https://mhgapps.com/family 301!
+https://meathospitalitygroup.com/intentionaire https://mhgapps.com/family 301!
+http://meathospitalitygroup.com/intentionaire https://mhgapps.com/family 301!
+https://www.meathospitalitygroup.com/intentionaire https://mhgapps.com/family 301!
+http://www.meathospitalitygroup.com/intentionaire https://mhgapps.com/family 301!
+https://meathospitalitygroup.com/* https://mhgapps.com/:splat 301!
+http://meathospitalitygroup.com/* https://mhgapps.com/:splat 301!
+https://www.meathospitalitygroup.com/* https://mhgapps.com/:splat 301!
+http://www.meathospitalitygroup.com/* https://mhgapps.com/:splat 301!
