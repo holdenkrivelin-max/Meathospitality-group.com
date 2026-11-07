@@ -225,10 +225,25 @@
     <div class="sec-kicker">First Word</div>
     <h2>The family is opening, one app at a time.</h2>
     <p class="sec-sub" style="margin-bottom:6px">Join the list and you'll hear about every launch the day it happens — starting with Meat Life.</p>
-    <form method="post" action="#waitlist">
+    <form name="waitlist-mhg" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="waitlist-form">
+      <input type="hidden" name="form-name" value="waitlist-mhg">
+      <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
       <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
       <button class="btn" type="submit">Join the waitlist</button>
     </form>
+    <div id="waitlist-done" style="display:none;font-size:16.5px;color:var(--cream)">You're on the list — first word is yours when the doors open. — MHG Group</div>
+    <script>
+    (function(){
+      var f = document.getElementById('waitlist-form');
+      if(!f) return;
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()})
+        .then(function(){ f.style.display='none'; document.getElementById('waitlist-done').style.display='block'; })
+        .catch(function(){ f.submit(); });
+      });
+    })();
+    </script>
   </div>
 </section>
 
