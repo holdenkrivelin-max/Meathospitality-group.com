@@ -171,6 +171,23 @@
   </div>
 </section>
 
+<style>
+.prod-opener{margin-top:26px}
+.prod-toggle{display:inline-flex;align-items:center;gap:12px;background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:12px 26px;font:inherit;font-size:15px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.prod-toggle:hover{background:rgba(201,162,75,.12)}
+.prod-toggle .pt-mark{font-size:20px;line-height:1;transition:transform .25s}
+.prod-toggle[aria-expanded="true"] .pt-mark{transform:rotate(45deg)}
+.prod-panel{margin-top:22px;border:1px solid rgba(201,162,75,.35);background:rgba(255,255,255,.03);border-radius:18px;padding:28px 30px;text-align:left}
+.prod-panel h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 14px;color:var(--cream)}
+.prod-panel .prow{display:flex;gap:14px;padding:10px 0;border-top:1px solid rgba(201,162,75,.16)}
+.prod-panel .prow:first-of-type{border-top:none}
+.prod-panel .pname{flex:0 0 128px;color:var(--gold);font-weight:600}
+.prod-panel .pdesc{color:var(--cream);opacity:.88}
+.prod-panel .pfoot{margin-top:18px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.prod-panel .pnote{opacity:.75;font-size:15px}
+.bdv .bdv-in > div:first-child img{cursor:pointer}
+@media(max-width:640px){.prod-panel .prow{flex-direction:column;gap:2px}.prod-panel .pname{flex:none}}
+</style>
 <!-- LISIÈRE — the first product -->
 <style>
 .bdv{background:var(--forest2);border-top:1px solid var(--cardline);border-bottom:1px solid var(--cardline)}
@@ -194,6 +211,18 @@
       <a class="btn" href="#mhg-signup">Get first word</a>
     </div>
   </div>
+
+  <div class="wrap prod-opener">
+    <button class="prod-toggle" data-panel="lisiere-panel" aria-expanded="false"><span class="pt-label">Open the card</span><span class="pt-mark">+</span></button>
+    <div class="prod-panel" id="lisiere-panel" hidden>
+      <h3>Inside the tin</h3>
+      <div class="prow"><div class="pname">The scent</div><div class="pdesc">A French-inspired wood scent — warm woods, glowing and intimate, with one wisp of white smoke.</div></div>
+      <div class="prow"><div class="pname">The form</div><div class="pdesc"><i>Parfum solide</i> — a solid fragrance in a pocket tin. No spray, no spill; it goes where you go.</div></div>
+      <div class="prow"><div class="pname">The ritual</div><div class="pdesc">The last thing you put on before you walk into the room — so the room is already with you.</div></div>
+      <div class="prow"><div class="pname">The name</div><div class="pdesc"><i>Lisière</i> — the edge of the woods, where the dark trees end and the clearing opens. Named for the walk out.</div></div>
+      <div class="pfoot"><a class="btn" href="#mhg-signup">Get first word</a><span class="pnote">Coming soon — the first run is in the works.</span></div>
+    </div>
+  </div>
 </section>
 
 <!-- MHG GLOW — the second product -->
@@ -213,7 +242,36 @@
       <a class="btn" href="#mhg-signup">Get first word</a>
     </div>
   </div>
+
+  <div class="wrap prod-opener">
+    <button class="prod-toggle" data-panel="glow-panel" aria-expanded="false"><span class="pt-label">Open the card</span><span class="pt-mark">+</span></button>
+    <div class="prod-panel" id="glow-panel" hidden>
+      <h3>Inside the kit</h3>
+      <div class="prow"><div class="pname">The Balm</div><div class="pdesc">Untinted lip balm — the hero of the kit, the one everybody reaches for first.</div></div>
+      <div class="prow"><div class="pname">The Tint</div><div class="pdesc">Tinted lip balm in one sheer shade, made to work on everybody.</div></div>
+      <div class="prow"><div class="pname">The Glow Stick</div><div class="pdesc">A clear face stick — moisture and a subtle sheen. No color, no glitter.</div></div>
+      <div class="prow"><div class="pname">The Brow Gel</div><div class="pdesc">Clear gel for brows and lashes — tidy in ten seconds, then out the door.</div></div>
+      <div class="pfoot"><a class="btn" href="#mhg-signup">Get first word</a><span class="pnote">Made for women and men alike · one cream pouch · coming soon.</span></div>
+    </div>
+  </div>
 </section>
+
+<script>
+document.querySelectorAll('.prod-toggle').forEach(function(btn){
+  var panel=document.getElementById(btn.getAttribute('data-panel'));
+  if(!panel)return;
+  function toggle(force){
+    var open=(typeof force==='boolean')?force:panel.hidden;
+    panel.hidden=!open;
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.querySelector('.pt-label').textContent=open?'Close the card':'Open the card';
+  }
+  btn.addEventListener('click',function(){toggle();});
+  var sec=btn.closest('section');
+  var img=sec?sec.querySelector('.bdv-in img'):null;
+  if(img){img.addEventListener('click',function(){toggle();});}
+});
+</script>
 
 <section class="waitlist" id="waitlist">
   <div class="wrap">
