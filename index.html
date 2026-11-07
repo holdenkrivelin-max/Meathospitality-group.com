@@ -206,6 +206,60 @@
   </div>
 </section>
 
+
+<!-- MHG SIGNUP FORM (injected) -->
+
+<style>
+.mhg-signup{background:#17351F;color:#FAF6EC;padding:56px 20px 48px;font-family:Georgia,'Times New Roman',serif;border-top:3px solid #C9A227}
+.mhg-signup .wrap{max-width:680px;margin:0 auto}
+.mhg-signup h2{font-size:30px;margin:0 0 6px;color:#FAF6EC;font-weight:700}
+.mhg-signup h2 em{color:#E4C766;font-style:italic}
+.mhg-signup .sub{font-family:Helvetica,Arial,sans-serif;font-size:15px;color:#D8CFB4;margin:0 0 4px;line-height:1.5}
+.mhg-signup .note{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#B9AE8E;margin:0 0 24px}
+.mhg-signup form{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-family:Helvetica,Arial,sans-serif}
+.mhg-signup label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#E4C766;display:block;margin-bottom:5px}
+.mhg-signup input,.mhg-signup select,.mhg-signup textarea{width:100%;box-sizing:border-box;padding:11px 12px;border-radius:8px;border:1px solid #3D5C46;background:#FFFDF6;color:#1C1C1C;font-size:15px;font-family:Helvetica,Arial,sans-serif}
+.mhg-signup .full{grid-column:1/-1}
+.mhg-signup button{grid-column:1/-1;background:#C9A227;color:#17351F;border:0;padding:14px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;font-family:Helvetica,Arial,sans-serif}
+.mhg-signup button:hover{background:#E4C766}
+.mhg-signup .done{display:none;font-family:Helvetica,Arial,sans-serif;font-size:16px;color:#FAF6EC;background:#1F4630;border:1px solid #C9A227;border-radius:10px;padding:18px;line-height:1.55}
+@media(max-width:560px){.mhg-signup form{grid-template-columns:1fr}}
+</style>
+
+<section class="mhg-signup" id="mhg-signup">
+  <div class="wrap">
+    <h2>Join <em>MHG Group</em></h2>
+    <p class="sub">One form for the whole family — owners, operators, founders, and influencers. Pitch one venue, and the mains come with it.</p>
+    <p class="note">Two minutes, no contract — joining is a form, and the deals are made by you.</p>
+    <form name="signup-mhg-family" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="mhg-signup-form">
+      <input type="hidden" name="form-name" value="signup-mhg-family">
+      <input type="hidden" name="app" value="MHG Group">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div><label>I am a…</label><select name="role" required><option>Owner</option><option>Operator / manager</option><option>Founder / creator</option><option>Influencer</option></select></div>
+      <div><label>I'm interested in…</label><select name="interest"><option>Clip It</option><option>Meat Reserve</option><option>Ginley</option><option>Never Dry</option><option>Meathos</option><option>Gemley</option><option>More than one</option><option>Not sure yet</option></select></div>
+      <div><label>Full name</label><input type="text" name="name" required autocomplete="name"></div>
+      <div><label>Business / brand name</label><input type="text" name="business" autocomplete="organization"></div>
+      <div><label>Email</label><input type="email" name="email" required autocomplete="email"></div>
+      <div><label>Phone (optional)</label><input type="tel" name="phone" autocomplete="tel"></div>
+      <div class="full"><label>Neighborhood / city</label><input type="text" name="area"></div>
+      <div class="full"><label>Anything we should know? (optional)</label><textarea name="notes" rows="3"></textarea></div>
+      <button type="submit">Join MHG Group</button>
+    </form>
+    <div class="done" id="mhg-signup-done">Thank you — you're on the list for <strong>MHG Group</strong>. We'll be in touch at the email you gave us. — MHG Group</div>
+  </div>
+</section>
+<script>
+document.getElementById('mhg-signup-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var f = e.target;
+  fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(new FormData(f)).toString()})
+    .then(function() { f.style.display='none'; document.getElementById('mhg-signup-done').style.display='block'; })
+    .catch(function() { f.submit(); });
+});
+</script>
+<!-- /MHG SIGNUP FORM -->
+
 <footer>
   <div class="wrap">
     <div class="fbrand">MHG GROUP</div>
