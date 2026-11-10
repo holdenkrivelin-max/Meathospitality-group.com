@@ -170,6 +170,36 @@ document.getElementById('mhg-signup-form').addEventListener('submit', function(e
 </script>
 <!-- /MHG SIGNUP FORM -->
 
+<!-- MHG FEEDBACK FORM -->
+<section class="mhg-signup" id="shape">
+  <div class="wrap">
+    <h2>Shape <em>MHG Group</em></h2>
+    <p class="sub">We care about your input more than anything — it helps shape what this becomes.</p>
+    <form name="feedback-mhg" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="shape-form">
+      <input type="hidden" name="form-name" value="feedback-mhg">
+      <input type="hidden" name="app" value="MHG Group">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="full"><label>What do you think we should add?</label><textarea name="should-add" rows="3"></textarea></div>
+      <div class="full"><label>What do you think of it so far?</label><textarea name="what-you-think" rows="3"></textarea></div>
+      <div class="full"><label>What would make you come back, consistently?</label><textarea name="come-back" rows="3"></textarea></div>
+      <div class="full"><label>Email (optional — only if you want a reply)</label><input type="email" name="email" autocomplete="email"></div>
+      <button type="submit">Send your input</button>
+    </form>
+    <div class="done" id="shape-done">Thank you — your input shapes what <strong>MHG Group</strong> becomes next. Every note is read. — MHG Group</div>
+  </div>
+</section>
+<script>
+document.getElementById('shape-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var f = e.target;
+  fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(new FormData(f)).toString()})
+    .then(function() { f.style.display='none'; document.getElementById('shape-done').style.display='block'; })
+    .catch(function() { f.submit(); });
+});
+</script>
+<!-- /MHG FEEDBACK FORM -->
+
 <footer><div class="wrap"><div class="fbrand">MHG GROUP</div><div class="fmotto">We bring tomorrow today.</div><p style="margin-bottom:22px"><a class="btn" href="https://join.meathospitalitygroup.com/">Get Early Access</a></p><div class="flegal">MHG Group · New York, NY<br>© 2026 Meat Hospitality Group LLC · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></div></div><p class="joined"><a href="slutty-goose.html">Slutty Goose — the clothing line of MHG Group</a></p></footer>
 <script>if (new URLSearchParams(location.search).has('joined')) { document.getElementById('joined').hidden = false; }</script>
 <script>document.querySelectorAll('.toggle-card .toggle-head').forEach(function(head){head.addEventListener('click',function(){var card=head.closest('.toggle-card');var wasOpen=card.classList.contains('open');document.querySelectorAll('.toggle-card.open').forEach(function(c){c.classList.remove('open');var b=c.querySelector('.toggle-head');if(b){b.setAttribute('aria-expanded','false');}});if(!wasOpen){card.classList.add('open');head.setAttribute('aria-expanded','true');}});});</script></body>
