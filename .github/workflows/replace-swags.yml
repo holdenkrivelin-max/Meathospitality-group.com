@@ -1,0 +1,20 @@
+# One-time workflow: replace swags.html with the final SWAGS export.
+# Runs only when started manually. Delete this file after it runs.
+name: One-time replace of swags.html with final export
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace swags.html with final export
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm swags.html
+          git mv swags-members-club.html swags.html
+          git commit -m "Update swags.html to final SWAGS export with house rules"
+          git push
